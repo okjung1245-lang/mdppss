@@ -1,0 +1,1265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="미국 MDP">
+<meta name="theme-color" content="#4b5bf7">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<title>미국 MDP</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css">
+<style>
+  :root{
+    --primary:#4b5bf7; --primary-d:#3a48d6; --primary-soft:#eef0fe;
+    --bg:#f5f6f9; --card:#ffffff; --ink:#14161d; --sub:#8b909c; --line:#eef0f4;
+    --ok:#12b76a; --warn:#f79009; --danger:#f0483e; --chip:#eef0fe;
+    --shadow:0 6px 22px rgba(22,28,54,.06); --shadow-sm:0 1px 3px rgba(22,28,54,.05);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0;background:#e7e9f0;color:var(--ink);
+    font-family:'Pretendard Variable',Pretendard,'Segoe UI','Malgun Gothic',system-ui,sans-serif;
+    word-break:keep-all;line-height:1.55;-webkit-font-smoothing:antialiased;letter-spacing:-.01em}
+  #phone{max-width:430px;margin:0 auto;min-height:100vh;background:var(--bg);
+    position:relative;overflow:hidden;box-shadow:0 0 60px rgba(20,25,50,.12)}
+  @media (max-width:460px){html,body{background:var(--bg)}#phone{max-width:100%;box-shadow:none}}
+  /* top bar */
+  .appbar{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(12px);
+    color:var(--ink);padding:15px 18px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
+  .appbar .title{font-size:18px;font-weight:800;letter-spacing:-.03em;flex:1}
+  .appbar .back{font-size:20px;cursor:pointer;width:34px;height:34px;border-radius:50%;background:#f1f2f6;
+    display:flex;align-items:center;justify-content:center;color:var(--ink);font-weight:600}
+  .appbar .back:active{background:#e6e8ee}
+  .appbar .icn{position:relative;cursor:pointer;font-size:19px;width:36px;height:36px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;background:#f1f2f6}
+  .badge{position:absolute;top:-2px;right:-2px;background:var(--danger);color:#fff;
+    font-size:10px;min-width:17px;height:17px;border-radius:9px;display:flex;align-items:center;
+    justify-content:center;padding:0 4px;font-weight:800;border:2px solid #fff}
+  .screen{padding:18px 18px 100px}
+  /* generic */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:22px;
+    padding:18px;margin-bottom:14px;box-shadow:var(--shadow);transition:transform .12s ease,box-shadow .12s ease}
+  .card[onclick]:active{transform:scale(.988);box-shadow:var(--shadow-sm)}
+  h2{font-size:23px;font-weight:800;letter-spacing:-.035em;margin:6px 0 16px;line-height:1.25}
+  h3{font-size:16px;font-weight:700;letter-spacing:-.02em;margin:0 0 9px}
+  p.sub{color:var(--sub);font-size:13.5px;margin:2px 0}
+  .btn{display:block;width:100%;border:0;border-radius:15px;padding:15px;font-size:15.5px;
+    font-weight:700;letter-spacing:-.01em;background:var(--primary);color:#fff;cursor:pointer;text-align:center;
+    box-shadow:0 6px 16px rgba(75,91,247,.28);transition:transform .1s ease,box-shadow .1s ease,background .1s ease}
+  .btn:active{transform:scale(.98);box-shadow:0 3px 10px rgba(75,91,247,.24)}
+  .btn.ghost{background:#fff;color:var(--primary);border:1.5px solid #dfe2ff;box-shadow:none}
+  .btn.gray{background:#f1f2f6;color:var(--ink);box-shadow:none}
+  .btn.ok{background:var(--ok);box-shadow:0 6px 16px rgba(18,183,106,.26)}
+  .btn.danger{background:var(--danger);box-shadow:0 6px 16px rgba(240,72,62,.24)}
+  .btn.sm{padding:10px 14px;font-size:13.5px;width:auto;display:inline-block;border-radius:12px;box-shadow:none}
+  label{display:block;font-size:13px;font-weight:700;margin:14px 0 6px;color:var(--sub);letter-spacing:-.01em}
+  input,select,textarea{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:13px;
+    font-size:14.5px;font-family:inherit;background:#fbfbfd;color:var(--ink);transition:border-color .12s,box-shadow .12s}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary);background:#fff;
+    box-shadow:0 0 0 4px rgba(75,91,247,.12)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .chip{padding:9px 14px;border-radius:999px;background:#f1f2f6;color:#5a5f6b;
+    font-size:12.5px;font-weight:600;cursor:pointer;border:1.5px solid transparent;user-select:none;transition:.12s}
+  .chip.on{background:var(--primary);color:#fff;box-shadow:0 4px 12px rgba(75,91,247,.28)}
+  .chip.tag{background:var(--primary-soft);color:var(--primary);cursor:default}
+  .avatar{width:48px;height:48px;border-radius:34%;display:flex;align-items:center;
+    justify-content:center;font-size:20px;font-weight:800;flex-shrink:0}
+  .row{display:flex;gap:12px;align-items:center}
+  .between{display:flex;justify-content:space-between;align-items:center}
+  .pill{font-size:11.5px;font-weight:700;padding:4px 11px;border-radius:999px;letter-spacing:-.01em}
+  .pill.ok{background:#e7f8ef;color:#0e9a5a} .pill.warn{background:#fef3e2;color:#c77400}
+  .pill.info{background:var(--primary-soft);color:var(--primary)} .pill.gray{background:#f1f2f6;color:var(--sub)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+  /* bottom nav */
+  .bottomnav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;
+    background:rgba(255,255,255,.92);backdrop-filter:saturate(180%) blur(12px);
+    border-top:1px solid var(--line);display:flex;z-index:20;padding:6px 6px calc(6px + env(safe-area-inset-bottom))}
+  .bottomnav div{flex:1;text-align:center;padding:8px 0 7px;font-size:10.5px;font-weight:600;color:var(--sub);
+    cursor:pointer;border-radius:14px;transition:.12s;position:relative}
+  .bottomnav div.on{color:var(--primary)}
+  .bottomnav div.on .ic{transform:translateY(-1px)}
+  .bottomnav .ic{font-size:21px;display:block;margin-bottom:3px;transition:transform .15s ease;line-height:0}
+  .bottomnav .ic svg{width:24px;height:24px;vertical-align:middle}
+  .nm{font-family:Georgia,'Times New Roman',serif;font-weight:700;font-size:19px;letter-spacing:0;color:var(--ink)}
+  .sch{font-family:Georgia,'Times New Roman',serif}
+  .srow{padding:16px 2px;border-bottom:1px solid var(--line);cursor:pointer}
+  .srow:active{background:#f7f8fb}
+  /* misc */
+  .empty{text-align:center;color:var(--sub);padding:48px 12px;font-size:14px}
+  .toast{position:fixed;bottom:110px;left:50%;transform:translateX(-50%);background:#1b1e27;color:#fff;
+    padding:13px 20px;border-radius:999px;font-size:13.5px;font-weight:600;z-index:60;opacity:0;transition:.3s;
+    pointer-events:none;max-width:360px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.28)}
+  .toast.show{opacity:1}
+  .modal{position:fixed;inset:0;background:rgba(15,18,35,.45);z-index:50;display:none;
+    align-items:flex-end;justify-content:center;backdrop-filter:blur(2px)}
+  .modal.show{display:flex}
+  .sheet{background:#fff;width:100%;max-width:430px;border-radius:26px 26px 0 0;padding:14px 22px 26px;
+    max-height:86vh;overflow:auto;animation:up .28s cubic-bezier(.2,.8,.2,1)}
+  .sheet::before{content:'';display:block;width:40px;height:4px;border-radius:99px;background:#e2e4ea;margin:2px auto 16px}
+  @keyframes up{from{transform:translateY(100%)}to{transform:translateY(0)}}
+  .cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px}
+  .cal .h{text-align:center;font-size:11px;color:var(--sub);font-weight:700;padding:4px 0}
+  .cal .d{min-height:72px;border-radius:12px;background:#fff;border:1px solid var(--line);font-size:12px;
+    font-weight:600;padding:5px;position:relative;overflow:hidden}
+  .cal .d.dim{opacity:.4;background:#f4f5f8}
+  .cal .dot{width:6px;height:6px;border-radius:50%;background:var(--primary);position:absolute;bottom:5px;left:6px}
+  .cal .ev{font-size:8.5px;font-weight:600;background:var(--primary-soft);color:var(--primary);border-radius:5px;
+    padding:2px 4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .cal .ev.mk{background:#fef3e2;color:#b54708}
+  .cal .ev.bo{background:#fee4e2;color:#b42318}
+  .chatbubble{max-width:76%;padding:10px 14px;border-radius:20px;margin:3px 0;font-size:14px;line-height:1.5;white-space:pre-line}
+  .chatbubble.me{background:var(--primary);color:#fff;margin-left:auto;border-bottom-right-radius:6px;box-shadow:0 4px 12px rgba(75,91,247,.22)}
+  .chatbubble.them{background:#fff;color:var(--ink);border:1px solid var(--line);border-bottom-left-radius:6px;box-shadow:var(--shadow-sm)}
+  .chatsys{align-self:center;text-align:center;background:var(--primary-soft);color:var(--primary-d);font-size:12px;
+    padding:9px 16px;border-radius:14px;margin:12px auto;white-space:pre-line;max-width:90%;line-height:1.55;font-weight:600}
+  .chatdate{align-self:center;text-align:center;font-size:11px;color:var(--sub);background:#eceef3;font-weight:600;
+    padding:4px 13px;border-radius:999px;margin:14px auto 6px}
+  .chatrow{display:flex;flex-direction:column;margin:2px 0}
+  .chatrow.me{align-items:flex-end} .chatrow.them{align-items:flex-start}
+  .chattime{font-size:10px;color:var(--sub);margin:1px 6px 5px}
+  .chatlog{height:calc(100vh - 250px);overflow:auto;display:flex;flex-direction:column;padding:6px 0}
+  .splash{display:flex;flex-direction:column;align-items:center;min-height:100vh;
+    background:#f5f6f9;color:var(--ink);padding:64px 30px 40px;text-align:center}
+  .splash .mdp-icon{filter:drop-shadow(0 14px 26px rgba(20,25,50,.16));margin-bottom:26px}
+  .splash .logo{font-size:40px;font-weight:800;letter-spacing:-.04em;color:var(--ink)}
+  .splash .logo b{font-weight:500}
+  .splash .tagline{margin-top:10px;font-size:13px;font-weight:800;letter-spacing:.22em;color:var(--primary)}
+  .splash .desc{margin-top:16px;font-size:14px;color:var(--sub);max-width:290px;line-height:1.6}
+  .splash .sp-actions{margin-top:auto;width:100%;max-width:340px}
+  .splash .sp-actions .btn{margin-top:10px}
+  .fab{position:fixed;bottom:82px;left:50%;margin-left:128px;background:var(--primary);color:#fff;
+    width:54px;height:54px;border-radius:18px;font-size:26px;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 24px rgba(75,91,247,.42);cursor:pointer;z-index:19}
+  .divider{height:1px;background:var(--line);margin:14px 0}
+  a.link{color:var(--primary);font-size:13.5px;text-decoration:none;font-weight:700}
+</style>
+</head>
+<body>
+<div id="phone"><div id="app"></div></div>
+<div id="toast" class="toast"></div>
+<div id="modal" class="modal"><div id="sheet" class="sheet"></div></div>
+
+<script>
+/* ================= DATA ================= */
+const SUBJECTS=["General Chemistry","Biology","Physiology","Biochemistry","Organic Chemistry","TOEFL","GRE"];
+const SCHOOLS=["Seoul Foreign School","Korea International School","Chadwick International","Dwight School Seoul",
+  "Branksome Hall Asia","Yongsan International School","Seoul International School","Dulwich College Seoul",
+  "North London Collegiate School Jeju","Gyeonggi Suwon International School"];
+const REGIONS=["서울 서초구","서울 강남구","서울 송파구","서울 용산구","서울 성북구","인천 송도","제주 서귀포","경기 성남 분당","경기 수원","서울 마포구"];
+const COLORS=["#1e5eff","#12b76a","#f79009","#f04438","#7a5af8","#0ba5ec","#ee46bc","#16b364","#f63d68","#6172f3"];
+const DAYS=["일","월","화","수","목","금","토"];
+const WEEKEND_FROM='2026-03-23'; // 이 날짜부터 튜터는 주말(토·일)만 근무
+// 휴무(수업 없음): 개인 일정 기간 + 공휴일
+const BLACKOUTS=[
+  {from:'2025-04-25',to:'2025-04-28',reason:'제주도 일정'},
+  {from:'2025-05-05',to:'2025-05-06',reason:'어린이날 연휴'},
+  {from:'2025-06-03',to:'2025-06-10',reason:'가족 휴가'},
+  {from:'2025-07-15',to:'2025-07-19',reason:'일본 출장'},
+  {from:'2025-12-23',to:'2025-12-31',reason:'연말 휴무'},
+  {from:'2025-06-06',to:'2025-06-06',reason:'현충일'},
+  {from:'2025-08-15',to:'2025-08-15',reason:'광복절'},
+  {from:'2025-10-03',to:'2025-10-03',reason:'개천절'},
+  {from:'2025-10-06',to:'2025-10-08',reason:'추석 연휴'},
+  {from:'2025-10-09',to:'2025-10-09',reason:'한글날'},
+  {from:'2026-01-01',to:'2026-01-01',reason:'신정'},
+  {from:'2026-02-16',to:'2026-02-18',reason:'설날 연휴'},
+  {from:'2026-03-01',to:'2026-03-02',reason:'삼일절 연휴'}
+];
+const MINS=[3,8,11,14,17,21,24,27,32,36,39,43,47,52,56]; // 5분 단위가 아닌 자연스러운 분
+const NOWMS=new Date('2026-07-13T23:59:59').getTime();
+// ===== 학생 말투(0정중/1발랄/2간결/3감성) 별 대사 풀 =====
+function voiceOf(n){return (((n.charCodeAt(0)||0)+(n.charCodeAt(1)||0)+n.length)%4);}
+function vp(pool,v,i){const a=pool[((v%pool.length)+pool.length)%pool.length];return a[((i%a.length)+a.length)%a.length];}
+const R_CONF=[
+  ['네 알겠습니다','네 이따 뵙겠습니다','확인했습니다','네 준비해서 가겠습니다'],
+  ['넵넵 이따 봬요~ ㅎㅎ','네네 곧 갈게요!','옙 준비 완료입니다 ㅎㅎ','확인이요~~ 이따 봐요'],
+  ['넵','ㅇㅋ 이따봐요','네 ㄱㄱ','오케이'],
+  ['앗 넵 오늘도 잘 부탁드려요~','넵!! 준비 열심히 했어요 ㅎㅎ','네 이따 봬요~','옙 안 늦게 갈게요!']];
+const R_GOODBYE=[
+  ['그동안 정말 감사했습니다. 덕분에 많이 배웠어요','네, 가르쳐 주셔서 감사합니다! 시험 잘 보고 오겠습니다','정말 감사했습니다 선생님, 결과 나오면 꼭 말씀드릴게요'],
+  ['헐 벌써 마지막이라니 ㅠㅠ 그동안 너무 감사했어요 쌤!!','쌤 진짜 최고였어요 ㅠㅠ 시험 꼭 잘 볼게요 ㅎㅎ','아 아쉬워요 ㅠㅠ 감사했습니다!! 또 필요하면 연락드릴게요~'],
+  ['넵 감사했습니다','고마웠어요 쌤, 시험 잘 볼게요','넵 그동안 고마웠어요'],
+  ['쌤 그동안 진짜 감사했어요 ㅠㅠ 처음엔 막막했는데 많이 늘었어요','흑 벌써 끝이라니… 감사했습니다 쌤 잊지 못할 거예요 ㅠㅠ','정말 감사했어요!! 덕분에 자신감 붙었어요, 후기 꼭 남길게요 ㅎㅎ']];
+const R_POS=[
+  ['쌤 지난 모의고사 성적이 많이 올랐어요! 5회 더 신청하겠습니다','저번 시험 점수가 꽤 올랐어요. 5회 더 부탁드립니다'],
+  ['쌤!! 저 점수 진짜 많이 올랐어요 ㅎㅎ 5회 더 할래요~','대박 저 성적 올랐어요 쌤!! 5회 더 신청할게요 ㅎㅎ'],
+  ['쌤 점수 올랐어요. 5회 더 할게요','저 성적 올랐어요~ 5회 더요'],
+  ['쌤 저 이번에 점수 완전 잘 나왔어요 ㅠㅠ 너무 기뻐요! 5회 더 신청할게요','헐 쌤 저 성적 엄청 올랐어요 ㅠㅠ 감사해요 5회 더 할래요!']];
+const R_LATE=[
+  ['쌤 죄송해요, 오늘 {M}분 정도 늦을 것 같습니다 ㅠㅠ','선생님 {M}분 정도 늦을 것 같아요, 죄송합니다'],
+  ['쌤 저 오늘 {M}분만 늦을게요 ㅠㅠ 죄송해요!','헉 쌤 저 {M}분 늦어요 ㅠㅠ'],
+  ['쌤 {M}분 늦어요','{M}분 정도 늦을듯요 ㅠ'],
+  ['쌤 저 진짜 죄송한데 {M}분 정도 늦을 것 같아요 ㅠㅠ 차가 너무 막혀서요','앗 쌤 오늘 {M}분 늦을 것 같아요 ㅠㅠ 미안해요']];
+const R_SINIT=[
+  ['선생님 오늘 {T}시 수업 맞나요?','오늘 {T}시 수업 맞는지 확인차 여쭤봐요'],
+  ['쌤 오늘 {T}시 맞죠~? ㅎㅎ','쌤 오늘 수업 {T}시죠? 확인이요!'],
+  ['쌤 오늘 {T}시죠?','오늘 {T}시 맞나요'],
+  ['쌤 오늘 {T}시 맞죠? 오늘 왠지 떨리네요 ㅎㅎ','쌤 오늘 {T}시 맞나요~? 기대돼요 ㅎㅎ']];
+const R_OPEN=[
+  ['안녕하세요, {P} 준비 중인 학생입니다. {S} 과외 가능할까요?','안녕하세요. {S} 과외 문의드립니다, {P} 준비하고 있어요'],
+  ['안녕하세요~ 저 {P} 준비하는데 {S}가 너무 약해서요 ㅠㅠ 봐주실 수 있어요?','쌤 안녕하세요! {P} 준비하면서 {S} 도움받고 싶어 연락드려요 ㅎㅎ'],
+  ['안녕하세요 {S} 과외 되나요? {P} 준비 중이에요','{S} 과외 가능한가요? {P} 준비합니다'],
+  ['안녕하세요! 저 {P} 준비하는데 {S}가 진짜 걱정이에요 ㅠㅠ 도와주실 수 있을까요?','쌤 안녕하세요~ {P} 준비 중인데 {S} 꼭 잡고 싶어서요! 가능할까요?']];
+const R_OPEN2=[
+  ['네 {D}요일 {T}시 좋습니다. 잘 부탁드립니다','{D}요일 {T}시로 하겠습니다, 감사합니다'],
+  ['네 {D}요일 {T}시 좋아요~ 잘 부탁드려요 ㅎㅎ','{D}요일 {T}시로 할게요! 감사합니다~'],
+  ['{D}요일 {T}시로 할게요','네 {D}요일 {T}시요'],
+  ['앗 {D}요일 {T}시 좋아요! 벌써 설레네요 ㅎㅎ 잘 부탁드려요~','네 {D}요일 {T}시로 부탁드려요! 열심히 할게요 ㅎㅎ']];
+const T_BYE=['{N}아 오늘이 마지막 수업이네~ 그동안 고생 많았어! 시험 꼭 잘 볼 거야 ^^','{N}아 벌써 마지막이라니 시간 빠르다 ㅎㅎ 그동안 진짜 열심히 했어! 좋은 결과 있을 거야','{N}아 오늘로 끝이네~ 처음보다 훨씬 늘었어, 자신감 갖고 시험 봐! 응원할게 ^^'];
+
+const store={
+  load(){const s=localStorage.getItem('mdp_state');return s?JSON.parse(s):null;},
+  save(){localStorage.setItem('mdp_state',JSON.stringify(state));}
+};
+let state=store.load();
+
+function seed(){
+  const users=[];
+  // ---- Ellie (튜터, 로그인 계정) ----
+  users.push({id:'ellie',role:'tutor',nickname:'Ellie',age:36,region:'서울 서초구(서초동)',
+    specialties:['General Chemistry','Organic Chemistry','Biochemistry','Physiology','TOEFL','GRE'],
+    gradYear:2013,school:'University of the Sciences in Philadelphia (약대)',job:'외국계 컨설팅회사 근무',
+    hourly:8,status:'approved',docType:'졸업증명서',color:'#7a5af8',emoji:'👩🏻‍⚕️',weekendFrom:WEEKEND_FROM,
+    bio:'필라델피아 약대(Pharmacy) 졸업, 現 외국계 컨설팅 근무. 화학·생화학·생리학 및 유학시험(TOEFL/GRE) 지도.'});
+  // ---- 학생 25명 랜덤 ----
+  const nicks=["Sunny","Leo","Mia","Jayden","Ariel","Noah","Chloe","Ethan","Grace","Ryan","Zoe","Kevin",
+    "Hannah","Daniel","Lucy","Alex","Sophia","Minji_K","Bella","Aiden","Yuna","Jason","Emma","Tommy","Sarah"];
+  let ci=0;
+  nicks.forEach((n,i)=>{
+    const k=2+ (i*3)%5; // 2~6 관심과목
+    const shuffled=[...SUBJECTS].sort(()=>Math.random()-.5).slice(0,k);
+    users.push({id:'s'+(i+1),role:'student',nickname:n,age:15+(i%4), // 15~18
+      region:REGIONS[i%REGIONS.length],interests:shuffled,school:SCHOOLS[i%SCHOOLS.length],
+      grade:["9학년","10학년","11학년","12학년"][i%4],
+      hourly:5+(i%4), // 희망 예산 5~8만원
+      status:'approved',docType:'국제학교 학생증',color:COLORS[i%COLORS.length],
+      emoji:['🧑🏻‍🎓','👩🏻‍🎓','🧑🏻‍💻','👨🏻‍🎓','👩🏻‍💻'][i%5],
+      bio:n+' · '+SCHOOLS[i%SCHOOLS.length]});
+  });
+  // ---- 매칭/알림/스케줄 시드 ----
+  const matches=[], schedules=[], messages={};
+  let mc=0;
+  // ---- 빈 슬롯 채울 신규 가상 학생 15명 ----
+  const NV=[['David',17,['General Chemistry','Biology']],['Emily',16,['Organic Chemistry','TOEFL']],
+    ['James',18,['Biochemistry','Physiology']],['Olivia',17,['TOEFL','GRE']],['Ben',16,['Biology','General Chemistry']],
+    ['Hana',18,['Physiology','Biochemistry']],['Chris',17,['Organic Chemistry','GRE']],['Nina',16,['General Chemistry','TOEFL']],
+    ['Tom',18,['Biochemistry','Biology']],['Ella',17,['TOEFL','Physiology']],['Sam',16,['Organic Chemistry','General Chemistry']],
+    ['Yuri',18,['GRE','Biology']],['Max',17,['Physiology','Biochemistry']],['Irene',16,['General Chemistry','TOEFL']],
+    ['Paul',18,['Biology','Organic Chemistry']],
+    ['Lucas',17,['Biology','TOEFL']],['Mila',16,['General Chemistry','GRE']],['Owen',18,['Organic Chemistry','Biochemistry']],
+    ['Ivy',17,['Physiology','Biology']],['Nate',16,['Biochemistry','General Chemistry']],['Rose',18,['TOEFL','Organic Chemistry']],
+    ['Eric',17,['GRE','Physiology']],['Jade',16,['Biology','Biochemistry']],['Kai',18,['General Chemistry','Organic Chemistry']],
+    ['Lena',17,['TOEFL','Biology']]];
+  NV.forEach((n,i)=>users.push({id:'nv'+(i+1),role:'student',nickname:n[0],age:n[1],
+    region:REGIONS[(i+3)%REGIONS.length],interests:n[2],school:SCHOOLS[(i+2)%SCHOOLS.length],
+    grade:['9학년','10학년','11학년','12학년'][i%4],hourly:5+(i%4),status:'approved',docType:'국제학교 학생증',
+    color:COLORS[(i+4)%COLORS.length],emoji:['🧑🏻‍🎓','👩🏻‍🎓','🧑🏻‍💻','👨🏻‍🎓','👩🏻‍💻'][i%5],bio:n[0]+' · '+SCHOOLS[(i+2)%SCHOOLS.length]}));
+  function enroll(sid,day,start,end,from,to){
+    mc++;const mid='m'+mc;
+    matches.push({id:mid,studentId:sid,tutorId:'ellie',status:'matched',studentPaid:true,tutorPaid:true,
+      payMethod:mc%2?'transfer':'inperson',from:from,to:to,ts:Date.now()});
+    schedules.push({id:'sc'+mc,matchId:mid,studentId:sid,tutorId:'ellie',weekdays:[day],start:start,end:end,
+      freq:'주 1회',startDate:from,endDate:to,kind:'regular'});
+    return mid;
+  }
+  // ---- 학생별 개별 시작일·수업횟수(5~20회)로 자연스럽게 배치 ----
+  function courseEnd(startIso,weekday,sessions){let d=new Date(startIso+'T00:00:00'),cnt=0,last=startIso;
+    for(let i=0;i<500&&cnt<sessions;i++){if(d.getDay()===weekday){const is=isoOf(d);if(!inBlackout(is)){cnt++;last=is;}}d.setDate(d.getDate()+1);}
+    return last;}
+  const enrollMid={};
+  // 직접 작성 대화 학생(스케줄=채팅 실제 기간) [id,요일,시작시,끝시,from,to]
+  const AUTH=[
+    ['s13',1,12,14,'2025-04-14','2025-07-25'],['s2',2,15,17,'2025-04-15','2025-07-29'],['s7',5,18,20,'2025-04-18','2025-07-25'],
+    ['s1',4,14,16,'2025-08-07','2025-11-13'],['s3',2,16,18,'2025-08-05','2025-11-14'],['s4',5,12,14,'2025-08-08','2025-11-14'],
+    ['s5',1,17,19,'2025-11-17','2026-02-23'],['s6',4,13,15,'2025-11-20','2026-02-26'],['s9',4,19,21,'2025-11-20','2026-02-26'],
+    ['nv5',5,15,17,'2025-04-18','2025-06-27']];
+  AUTH.forEach(a=>{enrollMid[a[0]]=enroll(a[0],a[1],a[2],a[3],a[4],a[5]);});
+  // 자동 생성 학생: 개별 시작일 + 수업횟수 [id,요일,시작시,끝시,횟수,시작일]
+  const GEN=[
+    ['nv2',2,18,20,8,'2025-04-15'],['nv3',4,15,17,15,'2025-04-24'],['nv4',5,15,17,10,'2025-05-02'],
+    ['nv1',1,15,17,12,'2025-05-26'],['nv6',1,18,20,20,'2025-06-16'],['nv7',2,15,17,6,'2025-07-01'],
+    ['nv8',4,18,20,12,'2025-08-14'],['nv9',5,18,20,5,'2025-09-05'],['nv10',1,15,17,16,'2025-09-22'],
+    ['nv11',2,18,20,10,'2025-10-14'],['nv12',4,15,17,8,'2025-11-13'],['nv13',5,19,21,20,'2025-12-05'],
+    ['nv14',1,19,21,12,'2026-01-12'],['nv15',2,15,17,7,'2026-02-03'],['nv16',2,12,14,10,'2025-12-09'],['nv19',2,18,20,10,'2026-01-06'],['nv21',5,15,17,10,'2026-01-09']];
+  const genRoster=[];
+  GEN.forEach(g=>{const to=courseEnd(g[5],g[1],g[4]);enrollMid[g[0]]=enroll(g[0],g[1],g[2],g[3],g[5],to);
+    genRoster.push({id:g[0],day:g[1],start:g[2],range:[g[5],to]});});
+  // ---- 토요일 보강 슬롯 2개(매주) ----
+  [[14,16],[17,19]].forEach((t,ti)=>schedules.push({id:'scm'+ti,tutorId:'ellie',studentId:null,weekdays:[6],
+    start:t[0],end:t[1],freq:'토 보강',startDate:'2025-04-12',endDate:'2026-03-20',kind:'makeup',label:'보강'}));
+  // ---- 주말 학생(주 1회, 대화 모두 직접작성): Kevin(토16·8회) / Lucy(토14·8회) / Alex(일15·5월 단기 5회) ----
+  [['s12',6,16,18,'2026-03-23','2026-05-16'],['s15',6,14,16,'2026-03-23','2026-05-23'],['s16',0,15,17,'2026-05-01','2026-05-21']]
+  .forEach(a=>enroll(a[0],a[1],a[2],a[3],a[4],a[5]));
+  // ---- 신규 토요일 진행중 학생 3명 (2026-07-04~, 토요일만, 대화 직접작성) ----
+  users.push({id:'nw1',role:'student',nickname:'Ruby',age:17,region:'서울 강남구',interests:['Physiology','Biology'],school:SCHOOLS[1],grade:'11학년',hourly:6,status:'approved',docType:'국제학교 학생증',color:COLORS[6],emoji:'👩🏻‍🎓',bio:'Ruby · pre-pharm'});
+  users.push({id:'nw2',role:'student',nickname:'Ian',age:18,region:'서울 서초구',interests:['Organic Chemistry','Biochemistry'],school:SCHOOLS[3],grade:'12학년',hourly:7,status:'approved',docType:'국제학교 학생증',color:COLORS[0],emoji:'🧑🏻‍🎓',bio:'Ian · pre-med'});
+  users.push({id:'nw3',role:'student',nickname:'Sena',age:17,region:'인천 송도',interests:['TOEFL','Biology'],school:SCHOOLS[5],grade:'11학년',hourly:6,status:'approved',docType:'국제학교 학생증',color:COLORS[4],emoji:'👩🏻‍💻',bio:'Sena · 미국 유학'});
+  const _EXD=['2026-07-11','2026-07-18','2026-08-01','2026-08-08','2026-08-15'];
+  [['nw1',6,14,16],['nw2',6,16,18],['nw3',6,18,20]].forEach(a=>{const mid=enroll(a[0],a[1],a[2],a[3],'2026-07-04','2026-09-30');const sc=schedules.find(x=>x.matchId===mid);if(sc)sc.exdates=(a[0]==='nw3')?_EXD.concat(['2026-07-25']):_EXD.slice();});
+  [['nw1','2026-07-14',19],['nw1','2026-07-28',19],['nw2','2026-07-22',19],['nw2','2026-07-29',19],['nw3','2026-07-23',19],['nw3','2026-07-30',19],['nw3','2026-07-31',18],['nw1','2026-08-03',19],['nw2','2026-08-05',19],['nw3','2026-08-07',19],['nw1','2026-08-25',19],['nw2','2026-08-27',19],['nw3','2026-08-31',19]].forEach((m,i)=>schedules.push({id:'mk'+i,tutorId:'ellie',studentId:m[0],date:m[1],start:m[2],end:m[2]+2,freq:'보강',kind:'makeup'}));
+  // ---- 승인 대기 알림 3명 ----
+  ['s18','s21','s23'].forEach((sid,i)=>{mc++;
+    matches.push({id:'m'+mc,studentId:sid,tutorId:'ellie',status:'requested',
+      studentPaid:false,tutorPaid:false,payMethod:null,ts:Date.now()-i*3600000});});
+  // ---- 신규 학생: 오프닝(문의→일정 조율) 자동 생성 (말투별로 다르게) ----
+  const PROG=['pre-med','pre-pharm','pre-dental','미국 유학'];
+  const TOPEN=['네 가능합니다~ 저는 두 시간 단위 주 1회로 받고 있어요. {D}요일 {T}시 어떠세요? 결제는 5회 선불 현금, 장소는 교대역 작심 스터디 카페입니다 ^^','안녕하세요! 네 가능해요~ 수업은 2시간씩 주 1회로 진행하고, 마침 {D}요일 {T}시가 비어 있어요. 결제는 5회 선불(현금), 장소는 교대역 1번 출구 작심 스터디카페입니다','네 안녕하세요~ 두 시간 단위 주 1회로 받고 있는데 {D}요일 {T}시 어떠세요? 5회 선불 현금이고, 교대역 작심 스터디카페에서 만나요 ^^'];
+  genRoster.forEach((r,ri)=>{
+    const sid=r.id,day=r.day,start=r.start,range=r.range,mid=enrollMid[sid],st=users.find(x=>x.id===sid);
+    const S=st.interests[0],P=PROG[ri%PROG.length],D=DAYS[day],T=start,V=voiceOf(st.nickname);
+    const fs=sessionDatesFor(day,range)[0]||range[0],fd=new Date(fs+'T00:00:00');
+    const od=range[0],r4=t=>t.replace('{P}',P).replace('{S}',S).replace('{D}',D).replace('{T}',T);
+    const t1=jts(od,18,ri),t2=t1+(180000+(ri%5)*60000),t3=t2+(150000+(ri%4)*60000),t4=t3+(120000+(ri%6)*60000);
+    messages[mid]=[
+      {from:'system',text:'🎉 매칭되었습니다! 이제 채팅을 시작해보세요.\n'+st.nickname+'님의 관심 1순위 과목: '+S,ts:t1-3600000},
+      {from:'student',text:r4(vp(R_OPEN,V,ri)),ts:t1},
+      {from:'tutor',text:pick(TOPEN,ri).replace('{D}',D).replace('{T}',T),ts:t2},
+      {from:'student',text:r4(vp(R_OPEN2,V,ri)),ts:t3},
+      {from:'tutor',text:'좋아요~ 그럼 '+(fd.getMonth()+1)+'/'+fd.getDate()+'부터 시작할게요! 교재는 제가 준비해둘게요 ^^',ts:t4}
+    ];
+  });
+  // ---- 종료 학생(C1~C3) 상세 대화 + 주1회 스케줄 (토요일은 보강 전용) ----
+  const scripts=[
+    {id:'s12',day:6,start:16,end:18,msgs:[
+      ['2026-03-23T13:00','student','안녕하세요, 저는 현재 미국 프리팜 과정 입학 예정인 Kevin이라고 합니다.\nGenChem 과정 단기 과외 희망하는데 가능할까요?'],
+      ['2026-03-23T13:20','tutor','네 가능합니다만 제가 주말에만 가능해서요, 토·일 2~8시 중 시간대 괜찮으시면 맞춰볼게요. 몇 회 생각하시나요?'],
+      ['2026-03-23T13:35','student','주 1회 8회 정도 생각하고 있습니다. 저는 토요일 네시가 좋을 거 같아요'],
+      ['2026-03-23T13:45','tutor','네 그럼 회당 16만원으로 선불로 받고 있구요, 이번 주 토요일 네시 교대역 작심스터디카페로 오시면 됩니다! 제가 그날 한 번 더 알려드릴게요'],
+      ['2026-03-27T18:00','tutor','안녕하세요! 내일 네시 수업 컨펌드립니다. 교재는 제가 준비할 테니 시간 맞춰 오시면 됩니다 ^^'],
+      ['2026-03-27T18:30','student','네 내일 봬요'],
+      ['2026-04-04T11:00','tutor','Kevin 학생 오늘도 네시 수업 맞죠? 확인차 문자해요 ㅎㅎ'],
+      ['2026-04-04T11:20','student','네 이따 봬요'],
+      ['2026-04-11T11:00','tutor','Kevin 학생 오늘 네시입니다~~'],
+      ['2026-04-18T11:00','tutor','Kevin 오늘 네시 변동 있으면 알려줘~'],
+      ['2026-04-18T11:15','student','변동없습니다'],
+      ['2026-04-25T10:00','student','쌤 저 오늘 일정이 있어서 20분 정도 늦을 거 같은데 뒤에 일정 가능하실까요'],
+      ['2026-04-25T10:10','tutor','응응 가능해 ^^'],
+      ['2026-05-02T11:00','tutor','Kevin 오늘도 4시에 봐 ^^'],
+      ['2026-05-09T11:00','tutor','오늘 네시 컨펌~ 변동 없쥬??'],
+      ['2026-05-09T11:10','student','네'],
+      ['2026-05-16T11:00','tutor','Kevin 오늘 마지막 수업이네~~ 셤 준비는 잘 해올 수 있지? 이따가 봐요~'],
+      ['2026-05-16T11:20','student','넵']
+    ]},
+    {id:'s15',day:6,start:14,end:16,msgs:[
+      ['2026-03-20T18:00','student','안녕하세요! 저는 미국 프리팜 준비하고 있는 고등학생입니다. Physiology 선행 과외 희망하는데 가능하실까요?'],
+      ['2026-03-20T18:20','tutor','네 가능합니다! 토요일 일요일 2시~8시 사이 가능합니다'],
+      ['2026-03-20T18:30','student','아 저는 토요일 2시 좋아요 주 1회씩 하면 5회가 기본인가요?'],
+      ['2026-03-20T18:35','tutor','네 기본 5회 선불로 받고 있고 이후 추가하시면 됩니다 ^^'],
+      ['2026-03-20T18:40','student','그럼 다음주 토요일부터로 해도 될까요? 장소는요?'],
+      ['2026-03-20T18:50','tutor','네 다음주 토요일 좋습니다. 장소는 교대역 1번 출구 작심스터디카페로 오시면 되세용. 2시에 오는 걸로 알고 있을게요!'],
+      ['2026-03-27T18:00','tutor','안녕하세요~ 내일 두시 첫 수업입니다 ^^ 교재는 제가 챙길 테니 준비 잘 해서 오시면 됩니다!'],
+      ['2026-03-27T18:30','student','네 내일 뵐게요!'],
+      ['2026-04-04T10:25','tutor','루씨~ 오늘 두시에요 변동 없죠?'],
+      ['2026-04-04T10:40','student','네 이따 뵐게요~'],
+      ['2026-04-11T11:44','tutor','루씨 오늘 3번째 수업이에요~ 이따 봐요'],
+      ['2026-04-18T11:15','tutor','오늘은 4번째 수업이에요 과제 챙겨와요!'],
+      ['2026-04-18T11:30','student','네 알겟습니당'],
+      ['2026-04-25T10:58','tutor','오늘 5번째 수업입니당~~ 이따 봐요!'],
+      ['2026-04-25T11:05','student','네넹'],
+      ['2026-04-25T13:50','student','쌤 저 차가 막혀서 10분 정도 늦을 거 같아요 ㅠㅠ'],
+      ['2026-04-25T13:52','tutor','응 천천히 와~'],
+      ['2026-05-01T17:50','student','쌤 저 급하게 내일은 일정이 생겨서 취소해야 할 거 같아요 ㅠㅠ 다음주에 뵐게요'],
+      ['2026-05-01T18:14','tutor','아 그래 알겠어~ 9일에 보자 ^^'],
+      ['2026-05-09T10:35','tutor','루씨 오늘 6번째 수업인 거 알죠? 변동 있음 알려줘요~'],
+      ['2026-05-09T10:45','student','네 이따 뵈요'],
+      ['2026-05-16T10:22','tutor','루씨 오늘 7번째 수업이에요~ 이따 봐요 ^^'],
+      ['2026-05-23T11:00','tutor','오늘은 8번째~ 과제 준 거 챙겨와요!'],
+      ['2026-05-23T11:15','student','네 알겠습니다']
+    ]},
+    {id:'s16',day:0,start:15,end:17,msgs:[
+      ['2026-05-01T16:35','student','안녕하세요, 저는 미국 대학 입시 준비중인 학생인데요, 다른 거 말고 토플만도 가능한가요?'],
+      ['2026-05-01T17:02','tutor','네 가능합니다~~ 저는 두 시간 단위로 주 1회 또는 2주 1회 스케줄로 받고 있습니다. 현재 가능한 시간대는 토·일 15~17시 입니다.\n제가 6월에는 조금 쉬어갈 예정이라 5월 한 달 하면 5회 정도만 가능할 것 같아요 ㅠㅠ 괜찮으실까요?'],
+      ['2026-05-01T17:05','student','네 시험이 바로 앞이라 꼭 일요일 아니어도 괜찮아요'],
+      ['2026-05-01T17:10','tutor','네 그러면 일단 일요일 15시로 수업은 잡고, 주중에 가능한 날 있으면 만나서 시간 맞춰보는 걸로 하면 어떨까요?'],
+      ['2026-05-01T17:14','student','네'],
+      ['2026-05-03T11:12','tutor','Alex 오늘 토플 첫 수업입니다! 교재는 제가 준비할 테니 시간 맞춰서 교대 1출 작심스터디카페로 오세요 ^^'],
+      ['2026-05-03T11:50','student','네 알겟습니다'],
+      ['2026-05-10T11:15','tutor','오늘 토플 두 번째 수업입니다~ 과제 준비해서 3시에 봐요!'],
+      ['2026-05-10T12:11','student','네'],
+      ['2026-05-14T15:10','tutor','Alex 오늘 저녁 7시 토플 세 번째 수업인 거 알죠? 변동 있으면 알려줘요'],
+      ['2026-05-14T15:14','student','변동 없습니다'],
+      ['2026-05-17T11:20','tutor','오늘 토플 네 번째 수업입니다~ 과제 챙겨오세요!'],
+      ['2026-05-17T11:44','student','네'],
+      ['2026-05-21T16:14','tutor','오늘 토플 마지막 수업이에요! 7시에 변동 없이 봐요'],
+      ['2026-05-21T16:20','student','네 알겠습니다']
+    ]},
+    {id:'nw1',day:6,start:14,end:16,msgs:[
+      ['2026-06-28T17:12','student','안녕하세요~ 저 pre-pharm 준비하는데 Physiology 주말 과외 가능할까요? ㅎㅎ'],
+      ['2026-06-28T17:31','tutor','네 가능해요~ 저는 요즘 토요일만 하고 있어요. 토요일 몇 시가 편하세요? 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2026-06-28T17:38','student','오 토요일 좋아요! 그럼 2시로 할게요~'],
+      ['2026-06-28T17:49','tutor','네 그럼 7/4 토요일 2시부터 시작할게요! 교재는 제가 준비해둘게요'],
+      ['2026-07-03T18:22','tutor','루비~ 내일 첫 수업이에요 2시에 봐요! 늦지 않게 와요 ㅎㅎ'],
+      ['2026-07-03T18:40','student','넵넵 이따 봬요~ ㅎㅎ'],
+      ['2026-07-06T13:20','tutor','루비 학생~ 제가 11일이랑 18일에는 일정이 있어서 수업이 어려울 것 같아요 ㅠㅠ 괜찮으면 18일 수업은 14일(화) 저녁 7시로 당기고, 11일 분은 28일(화) 저녁 7시에 보충해도 될까요?'],
+      ['2026-07-06T14:02','student','아 네 괜찮아요! 14일이랑 28일 저녁 7시로 할게요 ㅎㅎ'],
+      ['2026-07-06T14:05','tutor','고마워요~ 25일 토요일 정규 수업은 그대로예요!'],
+      ['2026-07-30T17:24','tutor','루비 학생~ 미안해요, 8월 1일 토요일에 급한 약속이 생겨버렸어요 ㅠㅠ 그 수업만 3일(월) 저녁 7시로 미뤄도 될까요?'],
+      ['2026-07-30T17:51','student','아 넵 괜찮아요~ 3일 7시에 봬요 ㅎㅎ'],
+      ['2026-07-30T17:55','tutor','고마워요! 교재는 제가 챙겨갈게요 ^^'],
+      ['2026-08-02T16:40','tutor','루비야 쌤이 8월 8일이랑 15일은 여름휴가로 자리를 비우게 됐어~ 대신 25일 저녁 7시에 보강 잡을까?'],
+      ['2026-08-02T17:11','student','오 여행 잘 다녀오세요! 25일 7시 좋아요 ㅎㅎ']
+    ]},
+    {id:'nw2',day:6,start:16,end:18,msgs:[
+      ['2026-06-30T20:08','student','안녕하세요 Organic Chemistry 주말 과외 되나요? pre-med 준비 중이에요'],
+      ['2026-06-30T20:24','tutor','네 가능합니다~ 저 요즘 토요일만 하는데 토요일 4시 어떠세요? 5회 선불 현금, 교대역 작심입니다 ^^'],
+      ['2026-06-30T20:31','student','네 4시 좋아요'],
+      ['2026-06-30T20:47','tutor','그럼 7/4 토요일 4시부터 시작할게요! 교재 준비해둘게요'],
+      ['2026-07-03T19:17','tutor','이안~ 내일 4시 첫 수업입니다! 교대 1출 작심으로 와요 ^^'],
+      ['2026-07-03T19:29','student','넵'],
+      ['2026-07-07T18:30','tutor','이안 학생, 제가 11일과 18일엔 사정이 생겨 쉬어야 할 것 같아요. 18일 수업은 22일(수) 저녁 7시로, 11일 분은 29일(수) 저녁 7시에 보충하면 어떨까요?'],
+      ['2026-07-07T18:52','student','넵 22일 29일 저녁 7시 다 가능합니다'],
+      ['2026-07-07T18:55','tutor','확인 감사해요~ 25일 토요일 정규 수업은 그대로 진행합니다!'],
+      ['2026-07-30T19:12','tutor','이안 학생, 미안한데 8월 1일에 제가 급한 약속이 생겨서요 ㅠㅠ 그 수업은 5일(수) 저녁 7시로 옮겨도 될까요?'],
+      ['2026-07-30T19:33','student','넵 5일 7시 가능합니다'],
+      ['2026-07-30T19:36','tutor','고마워요, 그럼 5일에 봬요!'],
+      ['2026-08-03T20:05','tutor','이안아 나 8월 둘째 주쯤 여름휴가라 8일·15일 수업이 어려울 것 같아. 27일 저녁 7시에 보강으로 대체하면 어떨까?'],
+      ['2026-08-03T20:19','student','넵 27일 7시 괜찮습니다 잘 다녀오세요']
+    ]},
+    {id:'nw3',day:6,start:18,end:20,msgs:[
+      ['2026-07-01T16:33','student','안녕하세요 쌤 ㅠㅠ 저 미국 유학 준비하는데 TOEFL 주말반 가능할까요? 시험이 얼마 안 남아서 급해요'],
+      ['2026-07-01T16:55','tutor','네 가능해요~ 저 토요일만 하고 있는데 토요일 6시 괜찮으세요? 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2026-07-01T17:02','student','네 6시 좋아요! 감사합니다 ㅠㅠ'],
+      ['2026-07-01T17:14','tutor','그럼 7/4 토요일 6시부터 시작할게요~ 스피킹부터 잡아가요!'],
+      ['2026-07-03T20:11','tutor','세나~ 내일 6시 첫 수업이에요! 준비물은 제가 챙길게요 ^^'],
+      ['2026-07-03T20:29','student','넵 쌤 내일 잘 부탁드려요 ㅠㅠ 떨리네요'],
+      ['2026-07-06T19:20','tutor','세나 학생~ 미안한데 제가 11일이랑 18일은 쉬어야 할 것 같아요 ㅠㅠ 18일 수업은 23일(목) 저녁 7시에, 11일 분은 27일(월) 저녁 7시에 보충해도 괜찮을까요?'],
+      ['2026-07-06T19:44','student','네 쌤 괜찮아요! 23일이랑 27일 7시에 뵐게요 ㅠㅠ'],
+      ['2026-07-06T19:47','tutor','고마워요~ 시험 전까지 스피킹 위주로 바짝 잡아봐요!'],
+      ['2026-07-19T15:41','tutor','세나 학생~ 미안해요 ㅠㅠ 25일은 저녁에 가족 모임이 잡혀서 6시 수업이 어렵고, 27일 보강도 일정이 겹치게 됐어요. 25일 수업은 31일(금) 6시로, 27일 보강은 30일(목) 7시로 옮겨도 될까요?'],
+      ['2026-07-19T16:02','student','아 네 괜찮아요! 그럼 23일 보강은 그대로예요?'],
+      ['2026-07-19T16:05','tutor','네네 23일(목) 7시는 그대로예요! 그 주는 30일·31일 이틀 연속인데 괜찮겠어요?'],
+      ['2026-07-19T16:09','student','네 시험 직전이라 오히려 좋아요 ㅎㅎ'],
+      ['2026-07-30T20:14','tutor','세나 학생 ㅠㅠ 자꾸 옮겨서 미안한데, 8월 1일에도 급한 약속이 생겨서... 그 수업은 7일(금) 저녁 7시로 미뤄도 될까요?'],
+      ['2026-07-30T20:31','student','괜찮아요 쌤! 7일 7시에 뵐게요~'],
+      ['2026-07-30T20:34','tutor','고마워요, 대신 그날 스피킹 꽉 채워서 해줄게요!'],
+      ['2026-08-02T18:10','tutor','세나야 쌤이 8일이랑 15일은 여름휴가라 쉬게 됐어 ㅠㅠ 그 두 번은 31일 저녁 7시에 보강으로 대신할게, 괜찮지?'],
+      ['2026-08-02T18:33','student','네 쌤 31일 7시 좋아요 휴가 잘 보내세요 ㅠㅠ']
+    ]},
+    {id:'nv5',day:5,start:15,end:17,msgs:[
+      ['2025-04-12T14:08','student','안녕하세요! 혹시 Biology 과외 가능할까요?'],
+      ['2025-04-12T14:23','tutor','Bio 과외 가능합니다 ^^ 저는 약대 출신이고, AP Bio 준비하시나요? 아니면 대학과정?'],
+      ['2025-04-12T14:31','student','아 대학과정이요'],
+      ['2025-04-12T14:39','tutor','아 네네 일단 저는 지금은 월~금 12시부터 10시까지 가능해서 편한 시간 알려주시면 맞춰볼게요!'],
+      ['2025-04-12T14:52','student','아 저는 그럼 금요일 3시가 좋을 거 같아요'],
+      ['2025-04-12T15:07','tutor','네 그럼 다음주 금요일 3시부터 수업 진행하는 거로 할게요! 5회씩이 기본이고 회당 16 선불로 받고 있습니다 ^^\n장소는 교대역 1출 앞 작심스터디카페입니다'],
+      ['2025-04-12T15:19','student','네 알겠습니다'],
+      ['2025-04-17T16:14','tutor','안녕하세요! 내일 바이오 첫 수업입니다~ 교재는 제가 준비할 테니 시간 맞춰 오세요 ^^'],
+      ['2025-04-17T16:17','student','네'],
+      ['2025-04-25T11:12','tutor','벤 오늘 세시 바이오 두번째 수업이에요~ 변동 사항 없죠?'],
+      ['2025-04-25T11:23','student','네'],
+      ['2025-05-02T12:10','tutor','오늘 세시 바이오 세번째 수업입니다~~ 과제는 다 했죠? ㅎㅎ'],
+      ['2025-05-02T12:26','student','네넵'],
+      ['2025-05-09T11:41','tutor','벤 오늘 네번째 수업이에요~ 3시에 봐요!'],
+      ['2025-05-09T11:52','student','넵'],
+      ['2025-05-16T10:36','tutor','오늘 다섯번째 수업이라 5회가 끝나네요~ 계속할지 생각해봤어요?'],
+      ['2025-05-16T13:22','student','아 저 계속 하고 싶어요! 5회 더 신청할게요'],
+      ['2025-05-16T13:34','tutor','좋아 그대로 금요일 3시로 신청하면 돼~ 이어서 가자 ^^'],
+      ['2025-05-23T14:33','student','쌤 저 오늘 한 10분 정도 늦을 것 같아요 ㅠㅠ'],
+      ['2025-05-23T14:41','tutor','응 천천히 와~ 조심히!'],
+      ['2025-05-30T11:47','tutor','벤 오늘 일곱번째 수업 3시 그대로죠?'],
+      ['2025-05-30T12:03','student','네 이따 봬요'],
+      ['2025-06-13T11:18','tutor','오늘 여덟번째 수업이에요~ 지난주는 쉬어서 오랜만이네 ㅎㅎ 3시에 봐요'],
+      ['2025-06-13T11:29','student','넵'],
+      ['2025-06-20T20:12','student','쌤 저 이번 모의고사 Bio 점수 많이 올랐어요! 감사합니다 ㅎㅎ'],
+      ['2025-06-20T20:26','tutor','오 잘했어 벤!! 마지막까지 힘내자~'],
+      ['2025-06-27T11:09','tutor','벤 오늘이 마지막 열번째 수업이네~ 그동안 고생 많았어! 대학 가서도 잘할 거야 ^^'],
+      ['2025-06-27T11:33','student','넵 그동안 정말 감사했습니다!']
+    ]},
+    {id:'s13',day:1,start:12,end:14,msgs:[
+      ['2025-04-12T11:00','student','안녕하세요, 저는 PCAT 준비중인 pre-pharm 학생입니다. Biochemistry 분야 과외 가능할까요?'],
+      ['2025-04-12T11:20','tutor','안녕하세요~ 저는 두 시간 단위로 주 1회 또는 2주 1회 스케줄로 받고 있습니다. 현재 가능한 시간대는 월~토 중 12시~밤 10시 사이 다 가능합니다. 결제는 5회에 선불로 현금으로만 받고 있습니다 ^^ 장소는 교대역 작심 스터디 카페입니다. 원하시는 시간대 알려주세요!'],
+      ['2025-04-12T11:35','student','저는 주 1회 월요일 12시로 희망합니다. 5회 후 추가 받고 싶으면 또 결제하면 되는거죠?'],
+      ['2025-04-12T11:37','tutor','네네 맞습니다'],
+      ['2025-04-12T11:40','student','소통은 계속 앱으로 하면 되겠죠? 제가 카톡이나 문자는 조금 꺼려져서요'],
+      ['2025-04-12T11:45','tutor','아 넵 편하신대로 하시면 됩니다\n그럼 다음주 월요일 12시 교대역 1번 출구 앞 작심 스터디카페 1번 회의실로 오시면 됩니다!\n교재는 제가 미리 준비해 놓을게요 ~'],
+      ['2025-04-18T10:00','tutor','Hannah 안녕~ 쌤이 다음주에는 가족 일정떄문에 월요일 수업이 어려울 것 같은데 한주 스킵하거나 다른 요일로 미룰 수 있을까? 지금은 5월 3일 토요일도 가능한데!'],
+      ['2025-04-18T10:12','student','아 네 괜찮아요. 한주 미루는 걸로 해도 되요'],
+      ['2025-04-18T10:15','tutor','아 근데 보니까 담주 월요일은 5/5일이네 ㅠㅠ 혹시 5/3일에 보강은 안되니?'],
+      ['2025-04-18T10:20','student','5/3일 두시 가능하세요?'],
+      ['2025-04-18T10:22','tutor','웅웅 고마워 그떄보자 ^^'],
+      ['2025-05-20T13:00','student','쌤 저 이제 5회 끝났는데 추가 하고 싶으면 5회씩 더 신청하면 되나요?'],
+      ['2025-05-20T13:05','tutor','응~ 같은 시간으로 신청하면 자동으로 나한테 알림 올거야 ㅎㅎ 근데 내가 6/3~6/10까지 가족 여행이라서. 가능하면 그 뒤로 신청해줄래?'],
+      ['2025-05-20T13:10','student','네 그러면 16일부터로 신청해 둘게요'],
+      ['2025-05-20T13:12','tutor','응 고마워 ^^'],
+      ['2025-06-16T12:00','student','쌤 저 도착했는데 어디세요?'],
+      ['2025-06-16T12:02','tutor','아 응 나도 바로 들어가! 미안미안'],
+      ['2025-07-25T18:00','student','쌤 저 오늘 미국 가요~ 그동안 감사했어요! 시험 잘 보고 꼭 붙을게영 ㅎㅎ'],
+      ['2025-07-25T18:05','tutor','응응 조심히 가고 그동안 나도 즐거웠어!! 행운을 빌게 !!']
+    ]},
+    {id:'s2',day:2,start:15,end:17,msgs:[
+      ['2025-04-12T13:00','student','안녕하세요! 저 pre-med 준비생인데요, Organic Chemistry가 너무 약해서요 ㅠㅠ 도와주실 수 있을까요?'],
+      ['2025-04-12T13:15','tutor','안녕하세요~ 저는 두 시간 단위로 주 1회 또는 2주 1회로 받고 있어요. 월~토 중 12시부터 밤 10시 사이 다 가능합니다. 결제는 5회 선불 현금으로 받고 있고, 장소는 교대역 작심 스터디 카페예요 ^^ 원하시는 시간 알려주세요!'],
+      ['2025-04-12T13:25','student','그럼 저는 화요일 3시로 주 1회 하고 싶어요'],
+      ['2025-04-12T13:30','tutor','좋아요! 그럼 다음 주 화요일 3시에 교대역 1번 출구 작심 스터디카페에서 봬요~ 교재는 제가 챙길게요'],
+      ['2025-05-13T09:30','student','쌤 저 오늘은 학교 행사가 있어서 미뤄야 할 것 같아요 ㅠㅠ'],
+      ['2025-05-13T09:40','tutor','아 괜찮아~ 그럼 이번 주 토요일 2시에 보강으로 할까? (토요일은 보강만 받고 있어서 ㅎㅎ)'],
+      ['2025-05-13T09:45','student','네 토요일 2시 좋아요! 감사합니다'],
+      ['2025-06-17T20:00','student','쌤 저 5회 다 들었는데 너무 도움 됐어요! 5회 더 신청할게요'],
+      ['2025-06-17T20:05','tutor','오 좋아 ㅎㅎ 같은 화요일 3시로 신청하면 나한테 알림 와~ 그대로 이어서 하자'],
+      ['2025-07-22T15:05','student','쌤 저 오늘 5분 정도 늦을 것 같아요 죄송해요!'],
+      ['2025-07-22T15:06','tutor','웅 천천히 와 조심히~'],
+      ['2025-07-29T17:10','student','쌤 오늘이 마지막 수업이었네요 ㅠㅠ 여름에 미국 학교 들어가요. 정말 감사했습니다!'],
+      ['2025-07-29T17:15','tutor','고생 많았어 Leo!! MCAT도 꼭 잘 볼 거야, 응원할게 화이팅!! ^^']
+    ]},
+    {id:'s7',day:5,start:18,end:20,msgs:[
+      ['2025-04-12T14:30','student','안녕하세요~ 저 pre-dental 준비하고 있고 General Chemistry랑 TOEFL 같이 봐주실 수 있나 해서요!'],
+      ['2025-04-12T14:45','tutor','네 안녕하세요~ 두 시간 단위로 주 1회 또는 2주 1회로 받고 있어요. 월~토 12시~밤 10시 사이 가능하고, 결제는 5회 선불 현금, 장소는 교대역 작심 스터디 카페입니다 ^^ 원하는 시간 알려주세요!'],
+      ['2025-04-12T14:55','student','금요일 저녁 6시 가능할까요?'],
+      ['2025-04-12T15:00','tutor','좋아요! 금요일 6시로 주 1회 잡을게요. General Chem 먼저 하고 TOEFL은 뒤에 조금씩 섞어서 가요~'],
+      ['2025-05-16T17:40','student','쌤 저 오늘 갑자기 병원을 가야 해서요 ㅠㅠ 다음으로 미룰 수 있을까요?'],
+      ['2025-05-16T17:45','tutor','저런 몸은 괜찮고? 그럼 이번 주 토요일 4시에 보강으로 하자~ 토욜은 보강만 받거든 ㅎㅎ'],
+      ['2025-05-16T17:50','student','네 토요일 4시 괜찮아요 감사합니다!'],
+      ['2025-06-13T19:50','student','쌤 덕분에 지난 모의 DAT 점수 올랐어요!! 5회 더 할게요'],
+      ['2025-06-13T19:55','tutor','오오 축하해 ㅎㅎ 그대로 금요일 6시로 신청해줘~'],
+      ['2025-07-11T18:00','student','쌤 오늘 TOEFL 라이팅 첨삭도 봐주실 수 있어요?'],
+      ['2025-07-11T18:03','tutor','응 가져와~ 오늘 뒷부분에 같이 보자'],
+      ['2025-07-25T20:05','student','쌤 다음 주부터 미국 가서 이번이 마지막이에요 ㅠㅠ 그동안 너무 감사했어요!'],
+      ['2025-07-25T20:10','tutor','Chloe 그동안 열심히 했어!! 시험도 인터뷰도 잘 될 거야, 꼭 좋은 소식 들려줘 ^^']
+    ]},
+    {id:'s1',day:4,start:14,end:16,msgs:[
+      ['2025-08-05T11:00','student','안녕하세요! 저 pre-pharm 준비 중이고 Physiology가 어려워서 과외 받고 싶어요'],
+      ['2025-08-05T11:15','tutor','안녕하세요~ 두 시간 단위로 주 1회 또는 2주 1회 받고 있어요. 월~토 12시~밤 10시 가능, 결제는 5회 선불 현금, 장소는 교대역 작심 스터디 카페입니다 ^^'],
+      ['2025-08-05T11:25','student','목요일 2시로 하고 싶어요!'],
+      ['2025-08-05T11:30','tutor','좋아요~ 목요일 2시 주 1회로 잡을게요. 첫날은 심혈관 파트부터 가요'],
+      ['2025-09-11T09:00','student','쌤 죄송해요 오늘 학교 필드트립이 잡혀서 수업이 어려울 것 같아요 ㅠㅠ'],
+      ['2025-09-11T09:10','tutor','아 괜찮아~ 그럼 이번 토요일 1시에 보강하자! 토욜은 보강만 하고 있거든 ㅎㅎ'],
+      ['2025-09-11T09:15','student','넵 토요일 1시 좋습니다!'],
+      ['2025-10-02T15:50','student','쌤 5회 끝났는데 너무 좋아서 계속 하고 싶어요 ㅎㅎ'],
+      ['2025-10-02T15:55','tutor','고마워 Sunny~ 목요일 2시 그대로 신청하면 돼! 신경계 파트 이어서 가자'],
+      ['2025-10-30T14:05','student','쌤 오늘 자료 프린트 못 했는데 혹시 있으세요?'],
+      ['2025-10-30T14:07','tutor','응 내가 여분 챙겨왔어~ 걱정 말고 와'],
+      ['2025-11-13T16:00','student','쌤 이번이 마지막 수업이네요! 학기 마치고 본가로 돌아가요. 정말 감사했습니다 ㅠㅠ'],
+      ['2025-11-13T16:05','tutor','Sunny 고생했어!! Physio 이제 자신감 붙었으니까 시험도 잘 볼 거야, 화이팅 ^^']
+    ]},
+    {id:'s3',day:2,start:16,end:18,msgs:[
+      ['2025-08-05T12:30','student','안녕하세요~ Biology랑 GRE 같이 준비하는데 봐주실 수 있을까요?'],
+      ['2025-08-05T12:45','tutor','네 안녕하세요! 두 시간 단위 주 1회 또는 2주 1회로 받아요. 월~토 12시~밤 10시 가능하고 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2025-08-05T12:55','student','화요일 4시 가능할까요?'],
+      ['2025-08-05T13:00','tutor','좋아요~ 화요일 4시로 잡을게요. Bio 먼저 하고 GRE 버벌은 숙제로 조금씩 내줄게요'],
+      ['2025-09-16T10:00','student','쌤 저 오늘 갑자기 집에 일이 생겨서요 ㅠㅠ 미뤄도 될까요?'],
+      ['2025-09-16T10:05','tutor','그럼~ 이번 토요일 3시에 보강으로 하자. 토욜은 보강만 받거든 ㅎㅎ'],
+      ['2025-09-16T10:08','student','네 토요일 3시 감사해요!'],
+      ['2025-10-14T17:55','student','쌤 GRE 단어 진짜 너무 많아요 ㅠㅠ'],
+      ['2025-10-14T18:00','tutor','ㅋㅋ 원래 그래~ 오늘 외우는 요령 알려줄게. 5회 더 신청은 화요일 그대로 하면 돼'],
+      ['2025-11-11T16:00','student','쌤 오늘 조금 늦을 것 같아요 지하철이 지연돼서요'],
+      ['2025-11-11T16:02','tutor','웅 안전하게 와~ 기다릴게'],
+      ['2025-11-14T18:00','student','쌤 이번 주로 과외 끝나네요 ㅠㅠ 덕분에 Bio 등급 올랐어요! 감사합니다'],
+      ['2025-11-14T18:05','tutor','Mia 잘했어!! GRE도 끝까지 파이팅하고, 좋은 결과 있으면 꼭 알려줘 ^^']
+    ]},
+    {id:'s4',day:5,start:12,end:14,msgs:[
+      ['2025-08-08T13:00','student','안녕하세요! MCAT 준비 중인데 Biochemistry가 제일 약해요 ㅠㅠ 도와주세요'],
+      ['2025-08-08T13:15','tutor','안녕하세요~ 두 시간 단위 주 1회 또는 2주 1회 받고 있어요. 월~토 12시~밤 10시 가능, 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2025-08-08T13:25','student','금요일 12시로 부탁드려요!'],
+      ['2025-08-08T13:30','tutor','좋아요~ 금요일 12시 주 1회로 시작할게요. 대사 경로부터 잡아가요'],
+      ['2025-09-12T09:00','student','쌤 오늘 학교 시험이 갑자기 잡혀서 수업 미뤄야 할 것 같아요 ㅠㅠ'],
+      ['2025-09-12T09:10','tutor','괜찮아~ 그럼 이번 토요일 12시에 보강하자! 토욜은 보강만 하거든 ㅎㅎ'],
+      ['2025-09-12T09:13','student','넵 토요일 12시 좋습니다 감사해요'],
+      ['2025-10-10T13:55','student','쌤 지난번에 알려주신 암기법 진짜 효과 좋았어요 ㅋㅋ 5회 더 할게요'],
+      ['2025-10-10T14:00','tutor','오 다행이다 ㅎㅎ 금요일 12시 그대로 신청해줘~ 이번엔 효소 파트 가자'],
+      ['2025-10-31T12:10','student','쌤 저 오늘 5분 늦어요 죄송해요!'],
+      ['2025-10-31T12:11','tutor','웅 천천히 와~'],
+      ['2025-11-14T14:00','student','쌤 오늘이 마지막이네요 ㅠㅠ 다음 학기엔 미국에서 들어요. 감사했습니다!'],
+      ['2025-11-14T14:05','tutor','Jayden 진짜 열심히 했어!! MCAT 꼭 좋은 점수 나올 거야, 응원할게 ^^']
+    ]},
+    {id:'s5',day:1,start:17,end:19,msgs:[
+      ['2025-11-17T11:00','student','안녕하세요~ 저 General Chemistry 기초부터 다시 잡고 싶은데 가능할까요?'],
+      ['2025-11-17T11:15','tutor','네 안녕하세요! 두 시간 단위 주 1회 또는 2주 1회 받고 있어요. 월~토 12시~밤 10시 가능, 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2025-11-17T11:25','student','월요일 5시로 하고 싶어요!'],
+      ['2025-11-17T11:30','tutor','좋아요~ 월요일 5시 주 1회로 잡을게요. 화학양론부터 차근차근 가요'],
+      ['2025-12-08T09:30','student','쌤 오늘 눈이 너무 와서 이동이 어려울 것 같아요 ㅠㅠ 미뤄도 될까요?'],
+      ['2025-12-08T09:35','tutor','그럼~ 날도 추운데 무리하지 말고. 이번 토요일 3시에 보강하자! 토욜은 보강만 받거든 ㅎㅎ'],
+      ['2025-12-08T09:40','student','네 토요일 3시 감사합니다!'],
+      ['2026-01-05T18:50','student','쌤 새해 복 많이 받으세요! 저 5회 더 신청할게요 ㅎㅎ'],
+      ['2026-01-05T18:55','tutor','Ariel도 새해 복 많이 받아~ 월요일 5시 그대로 신청하면 돼! 이번엔 열역학 가자'],
+      ['2026-02-02T17:05','student','쌤 오늘 자료 어디까지 예습하면 될까요?'],
+      ['2026-02-02T17:07','tutor','지난번 챕터 예제까지만 보고 와~ 나머지는 같이 풀자'],
+      ['2026-02-23T19:00','student','쌤 다음 주부터 미국 학교라 오늘이 마지막이에요 ㅠㅠ 그동안 감사했어요!'],
+      ['2026-02-23T19:05','tutor','Ariel 처음보다 진짜 많이 늘었어!! 가서도 잘할 거야, 행운을 빌게 ^^']
+    ]},
+    {id:'s6',day:4,start:13,end:15,msgs:[
+      ['2025-11-20T12:00','student','안녕하세요! DAT 준비하는데 Organic Chemistry 반응 파트가 너무 헷갈려요 ㅠㅠ'],
+      ['2025-11-20T12:15','tutor','안녕하세요~ 두 시간 단위 주 1회 또는 2주 1회 받고 있어요. 월~토 12시~밤 10시 가능, 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2025-11-20T12:25','student','목요일 1시로 부탁드려요'],
+      ['2025-11-20T12:30','tutor','좋아요~ 목요일 1시 주 1회로 갈게요. 반응 메커니즘 위주로 정리해줄게'],
+      ['2025-12-11T10:00','student','쌤 저 오늘 학교 행사가 있어서요 ㅠㅠ 미뤄도 될까요?'],
+      ['2025-12-11T10:05','tutor','괜찮아 ㅎㅎ 그럼 이번 토요일 13일 1시에 보강하자! 토욜은 보강만 하거든'],
+      ['2025-12-11T10:08','student','넵 13일 1시 좋아요 감사합니다!'],
+      ['2026-01-15T14:50','student','쌤 지난주 배운 거 시험에 그대로 나왔어요 ㅋㅋ 5회 더 할게요'],
+      ['2026-01-15T14:55','tutor','오 대박 ㅎㅎ 목요일 1시 그대로 신청해줘~ 이번엔 분광 파트 가자'],
+      ['2026-02-05T13:10','student','쌤 저 오늘 살짝 늦을 것 같아요 죄송해요'],
+      ['2026-02-05T13:11','tutor','웅 조심히 와~'],
+      ['2026-02-26T15:00','student','쌤 오늘이 마지막 수업이네요! 덕분에 DAT 자신감 생겼어요, 감사합니다 ㅠㅠ'],
+      ['2026-02-26T15:05','tutor','Noah 고생 많았어!! OChem 이제 두렵지 않지? 시험 꼭 잘 볼 거야 ^^']
+    ]},
+    {id:'s9',day:4,start:19,end:21,msgs:[
+      ['2025-11-20T11:30','student','안녕하세요~ TOEFL이랑 Biology 같이 봐주실 수 있을까요? 유학 준비 중이에요'],
+      ['2025-11-20T11:45','tutor','네 안녕하세요! 두 시간 단위 주 1회 또는 2주 1회 받고 있어요. 월~토 12시~밤 10시 가능, 5회 선불 현금, 교대역 작심 스터디 카페입니다 ^^'],
+      ['2025-11-20T11:55','student','목요일 저녁 7시 가능할까요?'],
+      ['2025-11-20T12:00','tutor','좋아요~ 목요일 7시로 잡을게요. Bio 먼저 하고 TOEFL 스피킹은 뒤에 20분씩 연습하자'],
+      ['2025-12-18T15:00','student','쌤 오늘 학원 특강이 겹쳐서요 ㅠㅠ 이번 주만 미뤄도 될까요?'],
+      ['2025-12-18T15:05','tutor','그럼~ 그럼 이번 토요일 5시에 보강하자! 토욜은 보강만 받고 있어 ㅎㅎ'],
+      ['2025-12-18T15:08','student','네 토요일 5시 감사해요!'],
+      ['2026-01-15T20:50','student','쌤 TOEFL 스피킹 점수 올랐어요!! 5회 더 신청할게요 ㅎㅎ'],
+      ['2026-01-15T20:55','tutor','우와 축하해 Grace~ 목요일 7시 그대로 신청하면 돼! 이번엔 라이팅도 같이 보자'],
+      ['2026-02-12T19:10','student','쌤 오늘 감기 기운이 있는데 마스크 쓰고 가도 될까요?'],
+      ['2026-02-12T19:12','tutor','응 당연하지~ 무리하지 말고 따뜻하게 입고 와'],
+      ['2026-02-26T21:00','student','쌤 오늘이 마지막이네요 ㅠㅠ 다음 달에 미국 가요! 그동안 너무 감사했어요'],
+      ['2026-02-26T21:05','tutor','Grace 처음보다 스피킹이 확 늘었어!! 가서도 씩씩하게 잘할 거야, 꼭 붙자 ^^']
+    ]}
+  ];
+  scripts.forEach(sp=>{
+    const m=matches.find(x=>x.studentId===sp.id);if(!m)return;
+    const st=users.find(x=>x.id===sp.id);
+    const first=(st.interests&&st.interests[0])||'General Chemistry';
+    const t0=new Date(sp.msgs[0][0]).getTime();
+    const arr=[{from:'system',text:'🎉 매칭되었습니다! 이제 채팅을 시작해보세요.\n'+st.nickname+'님의 관심 1순위 과목: '+first,ts:t0-3600000}];
+    sp.msgs.forEach(a=>arr.push({from:a[1],text:a[2],ts:new Date(a[0]).getTime()}));
+    arr.sort((a,b)=>a.ts-b.ts);
+    messages[m.id]=arr;
+  });
+  // ---- 매주 자연스러운 대화 자동 보강 (컨펌/확인/지각/보강/점수향상/작별) ----
+  const authoredIds=scripts.map(s=>s.id);
+  function sessionDatesFor(day,range){const out=[];let d=new Date(range[0]+'T00:00:00');
+    const end=Math.min(new Date(range[1]+'T00:00:00').getTime(),NOWMS);
+    for(;d.getTime()<=end;d.setDate(d.getDate()+1)){if(d.getDay()===day){const is=isoOf(d);if(!inBlackout(is))out.push(is);}}return out;}
+  function pick(arr,i){return arr[((i%arr.length)+arr.length)%arr.length];}
+  function rep(t,N,T){return t.replace('{N}',N).replace('{T}',T);}
+  function jts(is,h,i){return new Date(is+'T'+String(h).padStart(2,'0')+':'+String(pick(MINS,i)).padStart(2,'0')+':00').getTime();}
+  function prevIso(is){const d=new Date(is+'T00:00:00');d.setDate(d.getDate()-1);return isoOf(d);}
+  // 주별 자연스러운 대화 풀 (컨펌/확인/지각/보강/질문/튜터단독)
+  const CONF_TD=['{N}아 오늘 {T}시 수업 잊지 않았지? 교대역 작심에서 봐~','오늘도 {T}시 그대로야, 이따 봐요 ^^','{N}아 오늘 {T}시입니다~ 교재는 내가 챙길게','오늘 {T}시 컨펌~ 변동 있으면 알려줘!','이따 {T}시에 봐요~ 늦지 않게 와 ㅎㅎ','{N}아 오늘 수업 {T}시 맞지? 확인차 톡해 ㅎㅎ','오늘 {T}시! 지난주 숙제 챙겨와~','{N}아 오늘 {T}시에 보자, 프린트는 내가 뽑아갈게'];
+  const CONF_R=['넵 이따 봬요!','네 곧 갈게요~','넵 준비해서 갈게요 ㅎㅎ','네 변동 없습니다!','확인했어요~ 이따 뵈어요','넵!'];
+  const CONF_TM=['{N}아 내일 {T}시 수업이야~ 잊지 마!','내일 {T}시에 봐요~ 숙제 마무리해오고 ㅎㅎ','{N}아 내일 {T}시 그대로지? 교재는 내가 챙길게','내일 {T}시 수업 컨펌~ 변동 있으면 미리 알려줘!','{N}아 내일 {T}시에 보자~ 지난번 오답 챙겨와!','내일 {T}시! 프린트는 내가 뽑아갈게~'];
+  const SINIT_TM=['쌤 내일 {T}시 수업 맞죠?','쌤 내일도 {T}시죠?','쌤 낼 {T}시 그대로예요?'];
+  const SINIT_TM_R=['응 맞아~ 내일 봐!','응응 내일 {T}시! 푹 자고 와 ㅎㅎ','맞아~ 내일 보자!'];
+  const SINIT=['쌤 오늘 {T}시 수업 맞죠?','쌤 오늘도 {T}시 그대로죠?','쌤 오늘 수업 있는 날 맞나요?'];
+  const SINIT_R=['응 맞아~ 이따 봐!','응응 그대로야 ^^','맞아 오늘 {T}시! 이따 봐요~'];
+  const LATE_R=['응 천천히 와 조심히~','괜찮아 뒤에 시간 넉넉해 ^^','웅 이따 봐 ㅎㅎ'];
+  const R_FIRST=['네! 잘 부탁드립니다','넵 알겠습니다!','네 확인했습니다, 감사합니다!','넵 시간 맞춰 가겠습니다!'];
+  const POSTP=[['선생님 죄송한데 이번 주는 일정이 생겨서 수업을 미뤄야 할 것 같습니다 ㅠㅠ','쌤 죄송해요, 이번 주는 집안 일정이 있어서 어려울 것 같아요'],['쌤 ㅠㅠ 저 이번 주 학교 행사 때문에 수업 못 갈 것 같아요','쌤 이번 주는 시험기간이라 한 번만 미뤄도 될까요 ㅠㅠ'],['쌤 이번 주 일정이 생겨서 미뤄야 할 것 같아요','쌤 이번 주는 어려울 것 같아요 ㅠㅠ'],['쌤 흑 이번 주는 갑자기 일이 생겨서 못 갈 것 같아요 ㅠㅠ','쌤 저 이번 주만 쉬어도 될까요? 갑자기 일정이 겹쳤어요 ㅠㅠ']];
+  const POSTP_R=[['네, 감사합니다. 토요일에 뵙겠습니다','알겠습니다, 그날 뵐게요'],['넵 감사해요!! 토요일에 봬요 ㅎㅎ','네네 좋아요! 감사합니다~'],['네 감사합니다','넵 그때 봬요'],['감사해요 쌤 ㅠㅠ 토요일에 꼭 갈게요','네 쌤 감사합니다 ㅠㅠ']];
+  const MK_T=['그래~ 그럼 이번 {M}/{D} 토요일 {T}시에 보강하자!','알겠어~ 그럼 {M}/{D} 토요일 {T}시 보강으로 잡을게!','응 괜찮아~ {M}/{D} 토요일 {T}시에 보강하면 되겠다!'];
+  const QA=[['쌤 오늘 배운 데 복습자료 좀 보내주실 수 있어요?','응 이따 앱으로 정리해서 보내줄게~'],
+    ['쌤 다음 시간엔 저번에 틀린 문제 위주로 봐주실 수 있어요?','그래 오답 정리해와~ 그거 위주로 보자'],
+    ['쌤 이 개념이 계속 헷갈려요 ㅠㅠ','괜찮아 오늘 다시 천천히 잡아줄게!'],
+    ['쌤 담달이 시험인데 진도 맞출 수 있을까요?','충분해~ 계획 짜서 갈 테니 걱정 마 ㅎㅎ']];
+  function enrichChat(mid,st,day,start,range,capToLast){
+    const msgs=messages[mid];if(!msgs)return;
+    const have={};let maxTs=0;msgs.forEach(m=>{have[isoOf(new Date(m.ts))]=true;if(m.ts>maxTs)maxTs=m.ts;});
+    const capIso=capToLast?isoOf(new Date(maxTs)):null;
+    const N=st.nickname,T=start,off=(N.charCodeAt(0)||0)+(N.charCodeAt(1)||0),V=voiceOf(N);
+    const dts=sessionDatesFor(day,range).filter(is=>!have[is]&&(!capIso||is<=capIso));
+    const posAt=Math.floor(dts.length*0.55);
+    let c=off;const g=()=>(4+(c%7))*60000;
+    dts.forEach((is,i)=>{
+      const w=(i+off)%7;
+      if(!capToLast&&i===0){ // 초반엔 존댓말 유지 (전날 저녁 컨펌)
+        const t=jts(prevIso(is),19,c++);
+        msgs.push({from:'tutor',text:'안녕하세요~ 내일 '+T+'시 수업 미리 확인차 연락드려요 ^^ 교대역 1번 출구 작심 스터디카페로 와주세요!',ts:t});
+        msgs.push({from:'student',text:pick(R_FIRST,c),ts:t+g()});return;
+      }
+      if(!capToLast&&i===1){
+        const t=jts(is,10,c++);
+        msgs.push({from:'tutor',text:'오늘도 '+T+'시에 봬요~ 지난 시간 내용 가볍게 복습해오면 좋아요 ^^',ts:t});
+        msgs.push({from:'student',text:pick(R_FIRST,c+2),ts:t+g()});return;
+      }
+      if(!capToLast&&dts.length>=3&&i===dts.length-1){ // 마지막 수업 작별
+        const t=jts(is,10,c++);
+        msgs.push({from:'tutor',text:pick(T_BYE,c).replace('{N}',N),ts:t});
+        msgs.push({from:'student',text:vp(R_GOODBYE,V,c),ts:t+g()});
+      } else if(!capToLast&&i===posAt&&dts.length>=4){ // 점수 향상 + 추가신청
+        const t=jts(is,20,c++);
+        msgs.push({from:'student',text:vp(R_POS,V,c),ts:t});
+        msgs.push({from:'tutor',text:'오 축하해 '+N+'~ '+DAYS[day]+'요일 '+T+'시 그대로 신청하면 돼! 이어서 가자',ts:t+g()});
+      } else if(w===2){ // 학생 지각 알림
+        const hh=Math.max(9,start-1),t=jts(is,hh,c++);
+        msgs.push({from:'student',text:vp(R_LATE,V,c).replace('{M}',(7+(c%3)*4)),ts:t});
+        msgs.push({from:'tutor',text:pick(LATE_R,c),ts:t+g()});
+      } else if(w===4){ // 학생이 먼저 확인 (전날/당일 섞기)
+        if(i%2){const t=jts(prevIso(is),20,c++);
+          msgs.push({from:'student',text:pick(SINIT_TM,i).replace('{T}',T),ts:t});
+          msgs.push({from:'tutor',text:pick(SINIT_TM_R,i).replace('{T}',T),ts:t+g()});
+        } else {const t=jts(is,9,c++);
+          msgs.push({from:'student',text:vp(R_SINIT,V,i).replace('{T}',T),ts:t});
+          msgs.push({from:'tutor',text:rep(pick(SINIT_R,i),N,T),ts:t+g()});}
+      } else if(w===6&&day>=1&&day<=5){ // 평일 학생 → 토요일 보강
+        const sat=nextFreeSaturday(is,range),t=jts(is,9,c++);
+        msgs.push({from:'student',text:vp(POSTP,V,i),ts:t});
+        if(sat){msgs.push({from:'tutor',text:pick(MK_T,i).replace('{M}',sat.getMonth()+1).replace('{D}',sat.getDate()).replace('{T}',T),ts:t+g()});
+          msgs.push({from:'student',text:vp(POSTP_R,V,i+1),ts:t+g()*2});}
+      } else if(w===5){ // 튜터만 (답장 없는 주, 전날 저녁)
+        msgs.push({from:'tutor',text:rep(pick(CONF_TM,i),N,T),ts:jts(prevIso(is),19+(i%3),c++)});
+      } else { // 컨펌 + 답장 (전날 저녁/당일 아침 교차)
+        const db=(i+off)%2===0;
+        const t=db?jts(prevIso(is),19+(c%3),c++):jts(is,9+(c%2),c++);
+        msgs.push({from:'tutor',text:rep(pick(db?CONF_TM:CONF_TD,i),N,T),ts:t});
+        msgs.push({from:'student',text:vp(R_CONF,V,c),ts:t+g()});
+      }
+      if((i+off)%6===1&&i!==posAt&&i!==dts.length-1){ // 가끔 수업 후 질문
+        const qa=pick(QA,i),t=jts(is,start+2,c++);
+        msgs.push({from:'student',text:qa[0],ts:t});
+        msgs.push({from:'tutor',text:qa[1],ts:t+g()});
+      }
+    });
+    msgs.sort((a,b)=>a.ts-b.ts);
+  }
+  AUTH.filter(a=>a[0]!=='nv5').forEach(a=>enrichChat(enrollMid[a[0]],users.find(x=>x.id===a[0]),a[1],a[2],[a[4],a[5]],true));
+  genRoster.forEach(r=>enrichChat(enrollMid[r.id],users.find(x=>x.id===r.id),r.day,r.start,r.range,false));
+  return {users,matches,schedules,messages,currentUser:null,calMonth:3,calYear:2025,activeMatch:null};
+}
+if(!state){state=seed();store.save();}
+
+/* ================= HELPERS ================= */
+const $=id=>document.getElementById(id);
+const app=$('app');
+let nav='students'; // tutor bottom-nav tab
+function u(id){return state.users.find(x=>x.id===id);}
+function me(){return u(state.currentUser);}
+function toast(t){const el=$('toast');el.textContent=t;el.classList.add('show');
+  clearTimeout(window._tt);window._tt=setTimeout(()=>el.classList.remove('show'),2200);}
+function openSheet(html){$('sheet').innerHTML=html;$('modal').classList.add('show');}
+function closeSheet(){$('modal').classList.remove('show');}
+$('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeSheet();});
+function esc(s){return(s||'').replace(/</g,'&lt;');}
+function avatar(usr,size){size=size||48;const init=((usr.nickname||"?").trim()[0]||"?").toUpperCase();return `<div class="avatar" style="width:${size}px;height:${size}px;background:${usr.color}22;color:${usr.color};font-size:${size*0.4}px">${init}</div>`;}
+function reqCount(){return state.matches.filter(m=>m.tutorId===state.currentUser&&m.status==='requested').length;}
+
+/* pending payment for tutor after accept */
+function pendingPay(){return state.matches.filter(m=>m.tutorId===state.currentUser&&m.status==='accepted'&&!m.tutorPaid).length;}
+const TODAY=new Date(2026,6,13);
+function isoOf(dt){const m=dt.getMonth()+1,d=dt.getDate();return dt.getFullYear()+'-'+(m<10?'0'+m:m)+'-'+(d<10?'0'+d:d);}
+function schedWDs(s){return s.weekdays||(s.weekday!=null?[s.weekday]:[]);}
+function wdsLabel(wds){if(!wds||!wds.length)return '';const s=[...wds].sort((a,b)=>a-b);
+  return s.length===1?DAYS[s[0]]+'요일':DAYS[s[0]]+'~'+DAYS[s[s.length-1]];}
+// 튜터의 해당 날짜 근무 요일 (WEEKEND_FROM 이후 주말만)
+function workdays(dt){return isoOf(dt)>=WEEKEND_FROM?[0,6]:[1,2,3,4,5,6];}
+function inBlackout(iso){for(const b of BLACKOUTS)if(iso>=b.from&&iso<=b.to)return b;return null;}
+function firstWeekdayInRange(fromIso,toIso,day){let d=new Date(fromIso+'T00:00:00'),e=new Date(toIso+'T00:00:00');
+  for(;d<=e;d.setDate(d.getDate()+1))if(d.getDay()===day)return isoOf(d);return null;}
+function nextFreeSaturday(afterIso,range){let d=new Date(afterIso+'T00:00:00');
+  for(let i=0;i<70;i++){d.setDate(d.getDate()+1);if(d.getDay()===6){const is=isoOf(d);if(is>=range[0]&&is<=range[1]&&!inBlackout(is))return d;}}return null;}
+// 스케줄의 요일 라벨 (everyday면 기간이 전환일 전/후인지에 따라)
+function scheduleDaysLabel(sc){
+  if(sc.everyday){
+    if(sc.startDate>=WEEKEND_FROM)return '토·일';
+    if(sc.endDate&&sc.endDate<WEEKEND_FROM)return '월~토';
+    return '월~토→토·일';
+  }
+  return wdsLabel(schedWDs(sc));
+}
+function schedLabel(sc){if(!sc)return '스케줄 미설정';
+  return scheduleDaysLabel(sc)+' '+sc.start+':00~'+sc.end+':00';}
+function buildIntro(st,sc,baseTs){
+  const first=(st.interests&&st.interests[0])||'General Chemistry';
+  const t=baseTs||Date.now();
+  const days=isoOf(new Date(t))>=WEEKEND_FROM?'토·일':'월~토';
+  const slotTxt=sc?days+' '+sc.start+'~'+sc.end+'시':'월~토 12~20시 중 협의';
+  return [
+    {from:'system',text:'🎉 매칭되었습니다! 이제 채팅을 시작해보세요.\n'+st.nickname+'님의 관심 1순위 과목: '+first,ts:t},
+    {from:'student',text:'안녕하세요, 과외 희망합니다',ts:t+300000},
+    {from:'tutor',text:'안녕하세요~ 저는 두 시간 단위로 주 1회 또는 2주 1회 스케줄로 받고 있습니다. 현재 가능한 시간대는 '+slotTxt+' 입니다. 결제는 5회에 선불로 현금으로만 받고 있습니다 ^^ 장소는 교대역 작심 스터디 카페입니다. 원하시는 시간대 알려주세요!',ts:t+600000}
+  ];
+}
+function sessionsOn(dt){
+  const iso=isoOf(dt),dow=dt.getDay(),allowed=workdays(dt);
+  if(inBlackout(iso))return [];
+  return state.schedules.filter(s=>s.tutorId===state.currentUser).filter(s=>{
+    if(s.date)return s.date===iso;
+    if(s.startDate&&iso<s.startDate)return false;
+    if(s.endDate&&iso>s.endDate)return false;
+    if(s.exdates&&s.exdates.includes(iso))return false;
+    if(s.everyday){ if(!allowed.includes(dow))return false; }
+    else { if(!schedWDs(s).includes(dow))return false; }
+    if(s.freq==='격주'&&s.startDate){
+      const weeks=Math.floor((dt-new Date(s.startDate))/(7*864e5));
+      if(weeks%2!==0)return false;
+    }
+    return true;
+  }).sort((a,b)=>a.start-b.start);
+}
+
+/* ================= ROUTER ================= */
+let route={name:'splash',param:null};
+function go(name,param){route={name,param};render();window.scrollTo(0,0);}
+
+function render(){
+  const r=route.name;
+  if(r==='splash')return renderSplash();
+  if(r==='role')return renderRole();
+  if(r==='login')return renderLogin();
+  if(r==='signup')return renderSignup(route.param);
+  if(r==='pending')return renderPending();
+  if(r==='admin')return renderAdmin();
+  // logged-in tutor app
+  if(r==='home'){
+    if(nav==='students')return renderBrowseStudents();
+    if(nav==='manage')return renderManage();
+    if(nav==='calendar')return renderCalendar();
+    if(nav==='alerts')return renderAlerts();
+    if(nav==='profile')return renderMyProfile();
+  }
+  if(r==='studentDetail')return renderStudentDetail(route.param);
+  if(r==='tutorDetail')return renderTutorDetail(route.param); // student-side view
+  if(r==='chat')return renderChat(route.param);
+  if(r==='schedule')return renderScheduleEditor(route.param);
+  if(r==='browseTutors')return renderBrowseTutors(); // student mode
+}
+
+/* ================= SPLASH / AUTH ================= */
+function renderSplash(){
+  app.innerHTML=`<div class="splash">
+    <div class="mdp-icon">
+      <svg width="116" height="116" viewBox="0 0 116 116" xmlns="http://www.w3.org/2000/svg">
+        <rect x="4" y="4" width="108" height="108" rx="27" fill="#ffffff"/>
+        <g font-family="'Pretendard Variable',system-ui,sans-serif" font-weight="800" font-size="43" text-anchor="middle">
+          <text x="58" y="69" fill="#1ed6a6">MDP</text>
+          <text x="54" y="74" fill="#ff2d78">MDP</text>
+          <text x="62" y="73" fill="#00c8dc">MDP</text>
+          <text x="58" y="73" fill="#14161d">MDP</text>
+        </g>
+      </svg>
+    </div>
+    <div class="logo">미국 <b>MDP</b></div>
+    <div class="tagline">MEDICAL · DENTAL · PHARMACY</div>
+    <p class="desc">미국 의·치·약대 졸업 튜터와 국제학교 유학생을 잇는 1:1 과외 매칭</p>
+    <div class="sp-actions">
+      <button class="btn" onclick="go('login')">로그인</button>
+      <button class="btn ghost" onclick="go('role')">회원가입</button>
+    </div>
+  </div>`;
+}
+function renderLogin(){
+  app.innerHTML=`${bar('로그인',()=>go('splash'))}
+  <div class="screen">
+    <div class="card">
+      <h3>튜터 로그인</h3>
+      <p class="sub">가입 시 만든 닉네임으로 로그인하세요.</p>
+      <label>닉네임</label><input id="lg_nick" placeholder="닉네임을 입력하세요" autocomplete="off">
+      <label>비밀번호</label><input id="lg_pw" type="password" placeholder="비밀번호 입력" onkeydown="if(event.key==='Enter')doLogin()">
+      <button class="btn" style="margin-top:16px" onclick="doLogin()">로그인</button>
+    </div>
+    <p class="sub" style="text-align:center">아직 계정이 없나요? <a class="link" onclick="go('role')">회원가입</a></p>
+  </div>`;
+}
+function doLogin(){
+  const nick=($('lg_nick').value||'').trim();
+  if(!nick){toast('닉네임을 입력하세요');return;}
+  const found=state.users.find(x=>x.nickname.toLowerCase()===nick.toLowerCase());
+  if(!found){toast('계정을 찾을 수 없습니다');return;}
+  if(found.role!=='tutor'){toast('이 앱의 로그인은 튜터 계정만 지원합니다');return;}
+  if(found.status==='pending'){state.currentUser=found.id;go('pending');return;}
+  state.currentUser=found.id;nav='students';store.save();
+  go('home');toast(found.nickname+'님 환영합니다 👋');
+}
+
+function renderRole(){
+  app.innerHTML=`${bar('회원가입',()=>go('splash'))}
+  <div class="screen">
+    <h2>가입 유형을 선택하세요</h2>
+    <div class="card" onclick="go('signup','student')" style="cursor:pointer">
+      <div class="row"><div class="avatar" style="background:#12b76a">🎓</div>
+      <div><h3>학생으로 가입</h3><p class="sub">국제학교 재학생 · 학생증 인증 후 관리자 승인</p></div></div>
+    </div>
+    <div class="card" onclick="go('signup','tutor')" style="cursor:pointer">
+      <div class="row"><div class="avatar" style="background:#7a5af8">👩🏻‍⚕️</div>
+      <div><h3>튜터로 가입</h3><p class="sub">미국 의·치·약대 졸업자 · 졸업/성적증명서 제출 후 승인</p></div></div>
+    </div>
+    <div class="divider"></div>
+    <p class="sub" style="text-align:center">이미 계정이 있나요? <a class="link" onclick="go('login')">로그인</a></p>
+  </div>`;
+}
+
+let form={}; // signup working state
+function renderSignup(role){
+  form={role,interests:[],specialties:[]};
+  const isT=role==='tutor';
+  app.innerHTML=`${bar(isT?'튜터 가입':'학생 가입',()=>go('role'))}
+  <div class="screen">
+    <div class="card">
+      <h3>${isT?'튜터 정보 (실명 불필요, 닉네임 사용)':'학생 정보 (실명 불필요, 닉네임 사용)'}</h3>
+      <label>닉네임</label><input id="f_nick" placeholder="${isT?'닉네임 입력':'예: Sunny'}">
+      <div class="grid2">
+        <div><label>나이 (만)</label><input id="f_age" type="number" placeholder="${isT?'36':'17'}"></div>
+        <div><label>희망 시급 (만원)</label><input id="f_hourly" type="number" placeholder="${isT?'8':'6'}"></div>
+      </div>
+      <label>거주 지역</label><input id="f_region" placeholder="예: 서울 서초구">
+      ${isT?`
+        <div class="grid2">
+          <div><label>졸업 연도</label><input id="f_grad" type="number" placeholder="2013"></div>
+          <div><label>학교/전공</label><input id="f_school" placeholder="필라델피아 약대"></div>
+        </div>
+        <label>현재 하는 일</label><input id="f_job" placeholder="예: 외국계 컨설팅회사 근무">
+      `:`
+        <label>재학 국제학교</label><input id="f_school" placeholder="예: Seoul Foreign School">
+      `}
+      <label>${isT?'전문 분야 (복수 선택)':'관심 분야 (복수 선택)'}</label>
+      <div class="chips" id="f_subj">${SUBJECTS.map(s=>`<span class="chip" onclick="toggleSubj(this,'${s}')">${s}</span>`).join('')}</div>
+    </div>
+    <div class="card">
+      <h3>${isT?'졸업/성적증명서 제출':'국제학교 학생증 인증'}</h3>
+      <p class="sub">${isT?'미국 의·치·약대 졸업증명서 또는 성적증명서를 업로드하세요. 관리자 확인 후 승인됩니다.':'국제학교 학생증을 업로드하세요. 관리자 확인 후 승인됩니다.'}</p>
+      <button class="btn gray" id="f_doc" onclick="mockUpload()">📎 파일 선택 (목업)</button>
+    </div>
+    <button class="btn" onclick="submitSignup()">가입 신청</button>
+    <p class="sub" style="text-align:center;margin-top:8px">신청 후 관리자 승인을 기다립니다.</p>
+  </div>`;
+}
+function toggleSubj(el,s){el.classList.toggle('on');
+  const arr=form.role==='tutor'?form.specialties:form.interests;
+  const i=arr.indexOf(s);i>=0?arr.splice(i,1):arr.push(s);}
+function mockUpload(){form.doc=true;$('f_doc').textContent='✅ 증빙 업로드 완료 (mdp_document.pdf)';form.docName='mdp_document.pdf';}
+function submitSignup(){
+  const nick=$('f_nick').value.trim();
+  if(!nick){toast('닉네임을 입력하세요');return;}
+  if(!form.doc){toast('증빙 서류를 업로드하세요');return;}
+  const arr=form.role==='tutor'?form.specialties:form.interests;
+  if(arr.length===0){toast('분야를 1개 이상 선택하세요');return;}
+  const id=(form.role==='tutor'?'t':'s')+'new'+Date.now();
+  const nu={id,role:form.role,nickname:nick,age:+$('f_age').value||0,region:$('f_region').value||'-',
+    hourly:+$('f_hourly').value||0,status:'pending',color:COLORS[Math.floor(Math.random()*COLORS.length)],
+    emoji:form.role==='tutor'?'👩🏻‍⚕️':'🧑🏻‍🎓',school:($('f_school')||{}).value||'-',
+    docType:form.role==='tutor'?'졸업/성적증명서':'국제학교 학생증',bio:nick};
+  if(form.role==='tutor'){nu.specialties=form.specialties;nu.gradYear=+($('f_grad')||{}).value||0;nu.job=($('f_job')||{}).value||'-';}
+  else{nu.interests=form.interests;nu.grade='-';}
+  state.users.push(nu);state.currentUser=id;store.save();
+  go('pending');
+}
+function renderPending(){
+  const m=me();
+  app.innerHTML=`${bar('승인 대기',()=>{state.currentUser=null;go('splash');})}
+  <div class="screen">
+    <div class="card" style="text-align:center;padding:30px 18px">
+      <div style="font-size:52px">⏳</div>
+      <h2>관리자 승인 대기 중</h2>
+      <p class="sub">${esc(m.nickname)}님(${m.role==='tutor'?'튜터':'학생'})의 가입 신청이 접수되었습니다.<br>
+      제출하신 <b>${m.docType}</b>를 관리자가 확인 중입니다.</p>
+      <p class="sub" style="margin-top:12px">승인이 완료되면 알림으로 안내드립니다.</p>
+    </div>
+  </div>`;
+}
+
+/* ================= ADMIN ================= */
+function renderAdmin(){
+  const pend=state.users.filter(x=>x.status==='pending');
+  app.innerHTML=`${bar('관리자 승인 콘솔',()=>go(state.currentUser?'pending':'splash'))}
+  <div class="screen">
+    <h2>가입 승인 큐 <span class="pill warn">${pend.length}건 대기</span></h2>
+    ${pend.length===0?`<div class="empty">대기 중인 신청이 없습니다.<br>모든 회원이 승인되었습니다.</div>`:
+    pend.map(x=>`<div class="card">
+      <div class="row">${avatar(x)}<div style="flex:1">
+        <div class="between"><h3 style="margin:0">${esc(x.nickname)}</h3>
+        <span class="pill ${x.role==='tutor'?'info':'ok'}">${x.role==='tutor'?'튜터':'학생'}</span></div>
+        <p class="sub">${x.role==='tutor'?esc(x.school||'')+' · '+ (x.gradYear||'')+'년 졸업':esc(x.school||'')+' 재학'} · 만 ${x.age}세 · ${esc(x.region)}</p>
+      </div></div>
+      <div class="divider"></div>
+      <p class="sub">📄 제출서류: <b>${x.docType}</b> — ${x.docName||'mdp_document.pdf'}</p>
+      <div class="grid2" style="margin-top:8px">
+        <button class="btn ok" onclick="approve('${x.id}')">✅ 승인</button>
+        <button class="btn danger" onclick="reject('${x.id}')">거절</button>
+      </div>
+    </div>`).join('')}
+    <div class="divider"></div>
+    <p class="sub" style="text-align:center">승인 완료 회원: ${state.users.filter(x=>x.status==='approved').length}명</p>
+  </div>`;
+}
+function approve(id){const x=u(id);x.status='approved';store.save();toast(x.nickname+'님 승인 완료');
+  if(id===state.currentUser){state.currentUser=id;nav='students';go('home');}else renderAdmin();}
+function reject(id){state.users=state.users.filter(x=>x.id!==id);store.save();toast('신청을 거절했습니다');renderAdmin();}
+
+/* ================= TUTOR: BROWSE STUDENTS ================= */
+let studentFilter='ALL';
+function renderBrowseStudents(){
+  let list=state.users.filter(x=>x.role==='student'&&x.status==='approved');
+  if(studentFilter!=='ALL')list=list.filter(s=>s.interests.includes(studentFilter));
+  const myMatchedIds=state.matches.filter(m=>m.tutorId===state.currentUser).map(m=>m.studentId);
+  app.innerHTML=`${topbar('학생 둘러보기')}
+  <div class="screen">
+    <p class="sub">학생 프로필을 확인할 수 있습니다. <b>매칭 요청은 학생이 튜터를 선택</b>할 때 생성됩니다(튜터는 학생을 선택 불가).</p>
+    <div class="chips" style="margin:10px 0">
+      <span class="chip ${studentFilter==='ALL'?'on':''}" onclick="studentFilter='ALL';render()">전체</span>
+      ${SUBJECTS.map(s=>`<span class="chip ${studentFilter===s?'on':''}" onclick="studentFilter='${s}';render()">${s}</span>`).join('')}
+    </div>
+    ${list.map(s=>{const mm=state.matches.find(x=>x.tutorId===state.currentUser&&x.studentId===s.id&&x.status==='matched');const _t=isoOf(TODAY);const stt=mm?(mm.from&&mm.to?(_t<mm.from?'예정':_t>mm.to?'종료':'진행중'):'진행중'):null;
+      return `<div class="srow" onclick="go('studentDetail','${s.id}')">
+      <div class="row">${avatar(s)}<div style="flex:1">
+        <div class="between"><h3 class="nm" style="margin:0">${esc(s.nickname)}</h3>
+        ${stt?`<span class="pill ${stt==='진행중'?'info':stt==='예정'?'ok':'gray'}">${stt}</span>`:''}</div>
+        <p class="sub">만 ${s.age}세 · ${esc(s.region)} · <span class="sch">${esc(s.school)}</span></p>
+      </div></div>
+      <div class="chips" style="margin-top:10px">${s.interests.slice(0,4).map(i=>`<span class="chip tag">${i}</span>`).join('')}${s.interests.length>4?`<span class="chip tag">+${s.interests.length-4}</span>`:''}</div>
+    </div>`;}).join('')}
+  </div>${bottomNav()}`;
+}
+function renderStudentDetail(id){
+  const s=u(id);const m=state.matches.find(x=>x.studentId===id&&x.tutorId===state.currentUser);
+  app.innerHTML=`${bar('학생 프로필',()=>go('home'))}
+  <div class="screen">
+    <div class="card" style="text-align:center">
+      ${avatar(s,72)}
+      <h2 style="margin:10px 0 2px">${esc(s.nickname)}</h2>
+      <p class="sub">만 ${s.age}세 · ${s.grade} · ${esc(s.school)}</p>
+      <p class="sub">📍 ${esc(s.region)} · 희망 시급 ${s.hourly}만원</p>
+      ${m?`<div style="margin-top:8px"><span class="pill ${m.status==='matched'?'ok':'warn'}">${m.status==='matched'?'매칭 완료':m.status==='requested'?'매칭 요청 받음':'수락됨·결제대기'}</span></div>`:''}
+    </div>
+    <div class="card"><h3>관심 분야</h3>
+      <div class="chips">${s.interests.map(i=>`<span class="chip tag">${i}</span>`).join('')}</div>
+    </div>
+    <div class="card"><h3>소개</h3><p class="sub">${esc(s.bio)}</p></div>
+    ${m&&m.status==='requested'?`
+      <div class="card" style="background:#fff8ec;border-color:#fde3b6">
+        <h3>📩 이 학생이 회원님을 튜터로 선택했습니다</h3>
+        <p class="sub">수락하면 매칭이 성사되며, <b>튜터·학생 각각 플랫폼 이용료 2만원</b> 결제가 필요합니다.</p>
+        <button class="btn ok" onclick="acceptMatch('${m.id}')">수락하기</button>
+      </div>`:''}
+    ${m&&m.status==='matched'?`<button class="btn" onclick="go('chat','${m.id}')">💬 채팅 열기</button>
+      <button class="btn ghost" style="margin-top:8px" onclick="go('schedule','${m.id}')">📅 스케줄 관리</button>`:''}
+  </div>`;
+}
+
+/* ================= MATCHING & PAYMENT ================= */
+function acceptMatch(mid){
+  const m=state.matches.find(x=>x.id===mid);m.status='accepted';store.save();
+  // 결제 시트: 튜터 2만원
+  openSheet(`<h3>플랫폼 이용료 결제</h3>
+    <p class="sub">매칭 성사를 위해 <b>튜터 이용료 2만원</b>을 결제하세요. (학생도 동일하게 2만원 결제)</p>
+    <div class="card" style="box-shadow:none;margin-top:8px">
+      <div class="between"><span>미국 MDP 매칭 이용료</span><b>₩20,000</b></div>
+    </div>
+    <button class="btn" onclick="payTutor('${mid}')">2만원 결제하기 (목업)</button>
+    <button class="btn gray" style="margin-top:8px" onclick="closeSheet()">나중에</button>`);
+}
+function payTutor(mid){
+  const m=state.matches.find(x=>x.id===mid);m.tutorPaid=true;
+  // 데모: 학생도 결제한 것으로 간주 → 매칭 완료
+  m.studentPaid=true;m.status='matched';m.payMethod=m.payMethod||'transfer';
+  if(!state.messages[mid]){const sc=state.schedules.find(x=>x.matchId===mid);
+    state.messages[mid]=buildIntro(u(m.studentId),sc);}
+  store.save();
+  closeSheet();toast('결제 완료 · 매칭이 성사되었습니다 🎉');
+  go('studentDetail',m.studentId);
+}
+
+/* ================= TUTOR: MANAGE (matched students) ================= */
+function renderManage(){
+  const tIso=isoOf(TODAY);
+  const ms=state.matches.filter(m=>m.tutorId===state.currentUser&&m.status==='matched')
+    .sort((a,b)=>(b.from||'').localeCompare(a.from||''));
+  const active=ms.filter(m=>m.from&&m.to&&tIso>=m.from&&tIso<=m.to).length;
+  app.innerHTML=`${topbar('내 학생 관리')}
+  <div class="screen">
+    <h2>매칭된 학생 <span class="pill ok">${ms.length}명</span> <span class="pill info">진행중 ${active}</span></h2>
+    ${ms.length===0?`<div class="empty">아직 매칭된 학생이 없습니다.</div>`:
+    ms.map(m=>{const s=u(m.studentId);
+      const sc=state.schedules.find(x=>x.matchId===m.id);
+      const last=(state.messages[m.id]||[]).slice(-1)[0];
+      const st=m.from&&m.to?(tIso<m.from?'예정':tIso>m.to?'종료':'진행중'):'진행중';
+      return `<div class="card" style="${st==='종료'?'opacity:.6':''}">
+        <div class="row" onclick="go('studentDetail','${s.id}')" style="cursor:pointer">${avatar(s)}
+        <div style="flex:1"><div class="between"><h3 style="margin:0">${esc(s.nickname)}</h3>
+        <span class="pill ${st==='진행중'?'ok':st==='예정'?'info':'gray'}">${st}</span></div>
+        <p class="sub">${schedLabel(sc)}</p>
+        <p class="sub" style="font-size:11px">${m.from||''} ~ ${m.to||'진행중'} · ${m.payMethod==='transfer'?'직접 송금':'만나서 결제'}</p></div></div>
+        <p class="sub" style="margin-top:8px">💬 ${last?esc(last.text).slice(0,34):'대화 없음'}</p>
+        <div class="grid2" style="margin-top:10px">
+          <button class="btn sm ghost" style="width:100%" onclick="go('chat','${m.id}')">채팅</button>
+          <button class="btn sm gray" style="width:100%" onclick="go('schedule','${m.id}')">스케줄</button>
+        </div>
+      </div>`;}).join('')}
+  </div>${bottomNav()}`;
+}
+
+/* ================= CHAT ================= */
+function renderChat(mid){
+  const m=state.matches.find(x=>x.id===mid);const s=u(m.studentId);
+  const msgs=state.messages[mid]||[];
+  app.innerHTML=`${bar('💬 '+esc(s.nickname),()=>go('home'))}
+  <div class="screen" style="padding-bottom:80px">
+    <div class="chatlog" id="chatlog">
+      ${renderMsgs(msgs)}
+    </div>
+  </div>
+  <div style="position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:430px;
+    background:#fff;border-top:1px solid var(--line);padding:8px;display:flex;gap:8px">
+    <input id="chatin" placeholder="메시지 입력..." style="flex:1" onkeydown="if(event.key==='Enter')sendMsg('${mid}')">
+    <button class="btn" style="width:auto;padding:12px 18px" onclick="sendMsg('${mid}')">전송</button>
+  </div>`;
+  const cl=$('chatlog');if(cl)cl.scrollTop=cl.scrollHeight;
+}
+function fmtDate(d){return `${d.getFullYear()}년 ${d.getMonth()+1}월 ${d.getDate()}일 (${DAYS[d.getDay()]})`;}
+function fmtTime(d){let h=d.getHours(),ap=h<12?'오전':'오후';h=h%12||12;return `${ap} ${h}:${String(d.getMinutes()).padStart(2,'0')}`;}
+function renderMsgs(msgs){
+  if(!msgs||!msgs.length)return '<div class="empty">첫 메시지를 보내보세요.</div>';
+  let out='',lastDay=null;
+  msgs.forEach(x=>{
+    const d=new Date(x.ts),day=isoOf(d);
+    if(day!==lastDay){lastDay=day;out+=`<div class="chatdate">${fmtDate(d)}</div>`;}
+    if(x.from==='system'){out+=`<div class="chatsys">${esc(x.text)}</div>`;return;}
+    const side=x.from==='tutor'?'me':'them';
+    out+=`<div class="chatrow ${side}"><div class="chatbubble ${side}">${esc(x.text)}</div><div class="chattime">${fmtTime(d)}</div></div>`;
+  });
+  return out;
+}
+function sendMsg(mid){const v=$('chatin').value.trim();if(!v)return;
+  (state.messages[mid]=state.messages[mid]||[]).push({from:'tutor',text:v,ts:Date.now()});
+  store.save();renderChat(mid);}
+
+/* ================= SCHEDULE EDITOR ================= */
+function renderScheduleEditor(mid){
+  const m=state.matches.find(x=>x.id===mid);const s=u(m.studentId);
+  let sc=state.schedules.find(x=>x.matchId===mid);
+  app.innerHTML=`${bar('스케줄 설정',()=>go('home'))}
+  <div class="screen">
+    <div class="card"><div class="row">${avatar(s)}<div><h3 style="margin:0">${esc(s.nickname)}</h3>
+      <p class="sub">주간 반복 수업 시간을 설정하세요</p></div></div></div>
+    <div class="card">
+      <label>요일</label>
+      <select id="sc_day">${DAYS.map((d,i)=>`<option value="${i}" ${sc&&schedWDs(sc)[0]===i?'selected':''}>${d}요일</option>`).join('')}</select>
+      <div class="grid2">
+        <div><label>시작 시간</label><select id="sc_start">${hours(sc?sc.start:14)}</select></div>
+        <div><label>종료 시간</label><select id="sc_end">${hours(sc?sc.end:16)}</select></div>
+      </div>
+      <label>반복</label>
+      <select id="sc_freq"><option ${sc&&sc.freq==='주 1회'?'selected':''}>주 1회</option>
+        <option ${sc&&sc.freq==='주 2회'?'selected':''}>주 2회</option><option ${sc&&sc.freq==='격주'?'selected':''}>격주</option></select>
+      <label>과외비 결제 방식</label>
+      <select id="sc_pay"><option value="transfer" ${m.payMethod==='transfer'?'selected':''}>직접 송금</option>
+        <option value="inperson" ${m.payMethod==='inperson'?'selected':''}>만나서 결제</option></select>
+    </div>
+    <button class="btn" onclick="saveSchedule('${mid}')">저장</button>
+  </div>`;
+}
+function hours(sel){let o='';for(let h=8;h<=22;h++)o+=`<option value="${h}" ${sel===h?'selected':''}>${h}:00</option>`;return o;}
+function saveSchedule(mid){
+  const m=state.matches.find(x=>x.id===mid);
+  const day=+$('sc_day').value,start=+$('sc_start').value,end=+$('sc_end').value;
+  if(end<=start){toast('종료 시간이 시작보다 늦어야 합니다');return;}
+  let sc=state.schedules.find(x=>x.matchId===mid);
+  if(!sc){sc={id:'sc'+Date.now(),matchId:mid,studentId:m.studentId,tutorId:m.tutorId,startDate:m.from||null,endDate:m.to||null};state.schedules.push(sc);}
+  sc.weekdays=[day];delete sc.weekday;sc.start=start;sc.end=end;sc.freq=$('sc_freq').value;
+  m.payMethod=$('sc_pay').value;store.save();toast('스케줄이 저장되었습니다');go('home');
+}
+
+/* ================= CALENDAR (monthly, all students) ================= */
+function renderCalendar(){
+  const y=state.calYear,mth=state.calMonth; // 0-index month
+  const first=new Date(y,mth,1),startDow=first.getDay(),days=new Date(y,mth+1,0).getDate();
+  const mStart=isoOf(new Date(y,mth,1)),mEnd=isoOf(new Date(y,mth,days)),tIso=isoOf(TODAY);
+  const sel=state.selDate||tIso;
+  let cells='';
+  for(let i=0;i<startDow;i++)cells+=`<div class="d dim"></div>`;
+  for(let d=1;d<=days;d++){
+    const dt=new Date(y,mth,d),iso=isoOf(dt),bo=inBlackout(iso),evs=bo?[]:sessionsOn(dt);
+    const inner=bo?`<div class="ev bo" title="${esc(bo.reason)}">휴무</div>`
+      :evs.slice(0,4).map(sc=>{const nm=sc.studentId?esc(u(sc.studentId).nickname).slice(0,5):(sc.label||'보강');
+        return `<div class="ev${sc.kind==='makeup'?' mk':''}" title="${nm} ${sc.start}~${sc.end}시">${sc.start}시 ${nm}</div>`;}).join('');
+    cells+=`<div class="d${bo?' dim':''}" style="cursor:pointer;${iso===sel?'outline:2px solid var(--primary);':''}${iso===tIso&&iso!==sel?'background:#eef0fe;':''}" onclick="selDay('${iso}')">${d}${inner}</div>`;
+  }
+  app.innerHTML=`${topbar('월간 캘린더')}
+  <div class="screen">
+    <div class="between" style="margin-bottom:12px">
+      <button class="btn sm gray" onclick="shiftMonth(-1)">‹</button>
+      <h3 style="margin:0">${y}년 ${mth+1}월</h3>
+      <button class="btn sm gray" onclick="shiftMonth(1)">›</button>
+    </div>
+    <div class="cal">${DAYS.map(d=>`<div class="h">${d}</div>`).join('')}${cells}</div>
+    ${(()=>{const sd=new Date(sel+'T00:00:00');if(sd.getFullYear()!==y||sd.getMonth()!==mth)return '';
+      const bo2=inBlackout(sel),evs2=bo2?[]:sessionsOn(sd);
+      return `<div class="card" style="padding:12px;margin-top:12px"><div class="between"><b style="font-size:14px">${mth+1}월 ${sd.getDate()}일 (${DAYS[sd.getDay()]})</b>${bo2?`<span class="pill gray">휴무 · ${esc(bo2.reason)}</span>`:''}</div>
+      ${bo2?'':evs2.length?evs2.map(sc=>{const st=sc.studentId?u(sc.studentId):null;
+        return `<p class="sub" style="margin-top:6px">${sc.start}:00~${sc.end}:00 · <b style="color:var(--ink)">${st?esc(st.nickname):esc(sc.label||'보강')}</b>${(sc.kind==='makeup'||sc.date)?' <span class="pill warn">보강</span>':''}</p>`;}).join(''):'<p class="sub" style="margin-top:6px">수업 없음</p>'}
+      </div>`;})()}
+    <div class="divider"></div>
+    <h3>이 달의 수업 (${y}.${mth+1})</h3>
+    ${(()=>{const monthScs=state.schedules.filter(s=>s.tutorId===state.currentUser&&s.studentId&&s.kind!=='makeup')
+      .filter(s=>!((s.endDate&&s.endDate<mStart)||(s.startDate&&s.startDate>mEnd)))
+      .sort((a,b)=>a.start-b.start);
+    return monthScs.length===0?'<div class="empty">이 달에는 등록된 수업이 없습니다.<br>‹ › 로 다른 달을 확인하세요.</div>':
+    monthScs.map(sc=>{const s=u(sc.studentId);const slot=sc.start===12?'A':sc.start===15?'B':sc.start===18?'C':'-';
+      return `<div class="card" style="padding:12px"><div class="row">${avatar(s,40)}
+      <div style="flex:1"><div class="between"><b>${esc(s.nickname)}</b>
+      <span class="pill info">${sc.everyday?(slot!=='-'?'슬롯 '+slot:''):(sc.freq||'주 1회')}</span></div>
+      <p class="sub">${scheduleDaysLabel(sc)} ${sc.start}:00~${sc.end}:00</p>
+      <p class="sub" style="font-size:11px">기간 ${sc.startDate||'-'} ~ ${sc.endDate||'진행중'}</p></div></div>`;}).join('');})()}
+  </div>${bottomNav()}`;
+}
+function selDay(iso){state.selDate=iso;store.save();render();}
+function shiftMonth(d){let m=state.calMonth+d,y=state.calYear;
+  if(m<0){m=11;y--;}if(m>11){m=0;y++;}state.calMonth=m;state.calYear=y;store.save();render();}
+
+/* ================= ALERTS (match requests) ================= */
+function renderAlerts(){
+  const reqs=state.matches.filter(m=>m.tutorId===state.currentUser&&m.status==='requested');
+  const accs=state.matches.filter(m=>m.tutorId===state.currentUser&&m.status==='accepted'&&!m.tutorPaid);
+  app.innerHTML=`${topbar('알림')}
+  <div class="screen">
+    <h2>매칭 요청 <span class="pill warn">${reqs.length}</span></h2>
+    ${reqs.length===0?'<div class="empty" style="padding:20px">새 매칭 요청이 없습니다.</div>':
+    reqs.map(m=>{const s=u(m.studentId);return `<div class="card">
+      <div class="row" onclick="go('studentDetail','${s.id}')" style="cursor:pointer">${avatar(s)}
+      <div style="flex:1"><h3 style="margin:0">${esc(s.nickname)}</h3>
+      <p class="sub">회원님을 튜터로 선택했습니다 · 만 ${s.age}세 · ${esc(s.region)}</p></div></div>
+      <div class="chips" style="margin:8px 0">${s.interests.slice(0,3).map(i=>`<span class="chip tag">${i}</span>`).join('')}</div>
+      <button class="btn ok" onclick="acceptMatch('${m.id}')">수락 & 결제 진행</button>
+    </div>`;}).join('')}
+    ${accs.length?`<h2 style="margin-top:20px">결제 대기</h2>${accs.map(m=>{const s=u(m.studentId);
+      return `<div class="card"><div class="between"><b>${esc(s.nickname)}</b>
+      <button class="btn sm" onclick="acceptMatch('${m.id}')">2만원 결제</button></div></div>`;}).join('')}`:''}
+  </div>${bottomNav()}`;
+}
+
+/* ================= MY PROFILE (tutor) ================= */
+function renderMyProfile(){
+  const m=me();
+  app.innerHTML=`${topbar('내 프로필')}
+  <div class="screen">
+    <div class="card" style="text-align:center">
+      ${avatar(m,80)}
+      <h2 style="margin:10px 0 2px">${esc(m.nickname)}</h2>
+      <span class="pill info">튜터</span> <span class="pill ok">승인됨</span>
+      <p class="sub" style="margin-top:10px">${esc(m.bio)}</p>
+    </div>
+    <div class="card">
+      <h3>기본 정보</h3>
+      ${info('나이','만 '+m.age+'세')}${info('거주지',esc(m.region))}
+      ${info('졸업',esc(m.school)+' · '+m.gradYear+'년')}${info('현직',esc(m.job))}
+      ${info('희망 시급',m.hourly+'만원 / 시간')}
+    </div>
+    <div class="card"><h3>전문 분야</h3>
+      <div class="chips">${m.specialties.map(s=>`<span class="chip tag">${s}</span>`).join('')}</div>
+    </div>
+    <div class="card">
+      <h3>활동 요약</h3>
+      ${info('매칭된 학생',state.matches.filter(x=>x.tutorId===m.id&&x.status==='matched').length+'명')}
+      ${info('대기 중 요청',reqCount()+'건')}
+    </div>
+    <button class="btn gray" onclick="if(confirm('로그아웃 하시겠어요?')){state.currentUser=null;store.save();go('splash');}">로그아웃</button>
+  </div>${bottomNav()}`;
+}
+function info(k,v){return `<div class="between" style="padding:7px 0;border-bottom:1px solid var(--line)"><span class="sub">${k}</span><b style="font-size:14px">${v}</b></div>`;}
+function resetData(){if(confirm('모든 데모 데이터를 초기화할까요?')){localStorage.removeItem('mdp_state');location.reload();}}
+
+/* ================= UI PARTS ================= */
+let _backFn=null;
+function bar(title,back){_backFn=back;return `<div class="appbar"><span class="back" onclick="_backFn&&_backFn()">‹</span><div class="title">${title}</div></div>`;}
+function topbar(title){return `<div class="appbar"><div class="title">미국 MDP · ${title}</div>
+  <span class="icn" onclick="nav='alerts';render()">🔔${reqCount()?`<span class="badge">${reqCount()}</span>`:''}</span></div>`;}
+function bottomNav(){
+  const ico={
+    students:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M15 5.4a3.2 3.2 0 0 1 0 5.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 14.6a5.5 5.5 0 0 1 4.5 5.4"/></svg>',
+    manage:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2.5 8.5 12 13l9.5-4.5L12 4z"/><path d="M6 10.5V16c0 1.4 2.7 2.8 6 2.8s6-1.4 6-2.8v-5.5"/></svg>',
+    calendar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 9.8h17M8.2 3v4M15.8 3v4"/></svg>',
+    profile:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20.5a7.5 7.5 0 0 1 15 0"/></svg>'
+  };
+  const items=[['students','학생'],['manage','내 학생'],['calendar','캘린더'],['profile','프로필']];
+  return `<div class="bottomnav">${items.map(([k,l])=>`<div class="${nav===k?'on':''}" onclick="nav='${k}';go('home')">
+    <span class="ic">${ico[k]}</span>${l}</div>`).join('')}</div>`;
+}
+
+/* ================= BOOT ================= */
+render();
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
